@@ -1,10 +1,5 @@
 @import url(fontawesome-all.min.css);
 
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -98,7 +93,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #312450;
+		background: linear-gradient(135deg, #f599ea, #66a6ff);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -158,11 +153,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff;
+			color: #9cc2fb;
 		}
 
 	strong, b {
-		color: #ffffff;
+		color: #8fcafa;
 		font-weight: bold;
 	}
 
@@ -175,7 +170,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #f4a9ea;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -197,10 +192,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #48abf7, #f37be7);
+				background-image: -webkit-linear-gradient(to right, #48abf7, #f37be7);
+				background-image: -ms-linear-gradient(to right, #48abf7, #f37be7);
+				background-image: linear-gradient(to right,  #48abf7, #f37be7);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1835,7 +1830,7 @@ input, select, textarea {
 		border: solid 1px !important;
 		border-color: rgba(255, 255, 255, 0.15) !important;
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: #70f3f7 !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -1866,7 +1861,7 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
 			-ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
 			transition: opacity 0.2s ease, transform 0.2s ease;
-			background: #ffffff;
+			background: #f08eea;
 			border-radius: 3em;
 			content: '';
 			height: 100%;
@@ -1914,8 +1909,8 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ffffff;
-			color: #312450 !important;
+			background-color: #82b4fb;
+			color: #84b5fb !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -3761,7 +3756,7 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: #2386bc;
 			}
 
 			#sidebar nav a:after {
