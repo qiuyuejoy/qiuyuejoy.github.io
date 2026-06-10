@@ -6,7 +6,22 @@
 
 <p>
 Ph.D. Student in Computer Science, University of Massachusetts Amherst<br>
-📧 qzhong@umass.edu · <a href="#">LinkedIn</a> · <a href="#">Google Scholar</a> · <a href="#">GitHub</a>
+📧 qzhong@umass.edu · 
+
+<a href="https://www.linkedin.com/in/joy-qiuyue-zhong/">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" width="16" style="vertical-align: text-bottom;">
+  LinkedIn
+</a> · 
+
+<a href="https://scholar.google.com/citations?hl=en&user=r6-xE8EAAAAJ">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlescholar.svg" alt="Google Scholar" width="16" style="vertical-align: text-bottom;">
+  Google Scholar
+</a> · 
+
+<a href="https://github.com/qiuyuejoy">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub" width="16" style="vertical-align: text-bottom;">
+  GitHub
+</a>
 </p>
 
 <hr>
@@ -14,11 +29,13 @@ Ph.D. Student in Computer Science, University of Massachusetts Amherst<br>
 <h2>About Me</h2>
 
 <p>
-I am a Computer Science Ph.D. student at the University of Massachusetts Amherst. My research interests lie at the intersection of Human-Computer Interaction, social computing, positive computing, and human-centered AI.
+I am a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by 
+<a href="https://people.cs.umass.edu/~rkarkar/">Professor Ravi Karkar</a>. 
+My research lies at the intersection of human-centered AI, social computing, and positive computing.
 </p>
 
 <p>
-My work explores how AI systems can support human well-being, emotional regulation, workplace communication, and care-oriented interactions. I am especially interested in designing and evaluating AI systems that preserve user agency, support long-term engagement, and address real-world social and organizational needs.
+With a cross-disciplinary background in business and law, I study how technologies can support well-being across personal, interpersonal, and organizational contexts. My work explores how AI systems can support emotional regulation, meaningful interaction, and decision-making for collective well-being.
 </p>
 
   </div>
@@ -34,7 +51,6 @@ My work explores how AI systems can support human well-being, emotional regulati
 
 <hr>
 
----
 
 ## Education
 
