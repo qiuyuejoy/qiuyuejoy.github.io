@@ -10,15 +10,17 @@ Ph.D. Student in Computer Science, University of Massachusetts Amherst<br>
 📧 <a href="mailto:qzhong@umass.edu">qzhong@umass.edu</a> · 
 
 <a href="https://www.linkedin.com/in/joy-qiuyue-zhong/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
+  <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" width="20" style="vertical-align: text-bottom;">
+  LinkedIn
+</a> · 
 
 <a href="https://scholar.google.com/citations?hl=en&user=r6-xE8EAAAAJ">
-  <img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white" alt="Google Scholar">
-</a>
+  <img src="https://img.icons8.com/color/48/google-scholar--v3.png" alt="Google Scholar" width="20" style="vertical-align: text-bottom;">
+  Google Scholar
+</a> · 
 
 <a href="https://github.com/qiuyuejoy">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub">
+  <img src="https://img.icons8.com/color/48/github--v1.png" alt="GitHub" width="20" style="vertical-align: text-bottom;">  GitHub
 </a>
 </p>
 
