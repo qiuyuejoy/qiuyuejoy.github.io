@@ -6,21 +6,19 @@
 
 <p>
 Ph.D. Student in Computer Science, University of Massachusetts Amherst<br>
-📧 qzhong@umass.edu · 
+
+📧 <a href="mailto:qzhong@umass.edu">qzhong@umass.edu</a> · 
 
 <a href="https://www.linkedin.com/in/joy-qiuyue-zhong/">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" width="16" style="vertical-align: text-bottom;">
-  LinkedIn
-</a> · 
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
 
 <a href="https://scholar.google.com/citations?hl=en&user=r6-xE8EAAAAJ">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlescholar.svg" alt="Google Scholar" width="16" style="vertical-align: text-bottom;">
-  Google Scholar
-</a> · 
+  <img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white" alt="Google Scholar">
+</a>
 
 <a href="https://github.com/qiuyuejoy">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub" width="16" style="vertical-align: text-bottom;">
-  GitHub
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub">
 </a>
 </p>
 
