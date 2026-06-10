@@ -26,7 +26,7 @@ My work explores how AI systems can support human well-being, emotional regulati
   <img 
     src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" 
     alt="Qiuyue Joy Zhong" 
-    width="230"
+    width="400"
     style="border-radius: 12px; object-fit: cover;"
   >
 
