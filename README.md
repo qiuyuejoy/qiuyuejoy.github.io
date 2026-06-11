@@ -5,7 +5,7 @@
 <h1>Qiuyue (Joy) Zhong</h1>
 
 <p>
-Ph.D. Student in Computer Science, University of Massachusetts Amherst<br>
+Computer Science Ph.D. Student in HCI, University of Massachusetts Amherst<br>
 
 📧 <a href="mailto:qzhong@umass.edu">qzhong@umass.edu</a> · 
 
@@ -56,28 +56,30 @@ With a cross-disciplinary background in business and law, I study how technologi
 
 | Degree | Institution | Time / Note |
 |---|---|---|
-| Ph.D. in Computer Science | University of Massachusetts Amherst | Sep 2025 – May 2030 expected |
-| M.S. in Information Systems | Northeastern University | Jan 2023 – May 2025 · GPA: 3.8 / 4.0 |
-| Master of Laws | Washington University in St. Louis | 2021 – 2022 · Dean Scholarship |
-| Master of Laws | Beijing Normal University | 2019 – 2022 · Full-Ride Scholarship |
-| B.A. / B.Econ. in Finance | Tianjin Foreign Studies University Foreign Affairs College | 2012 – 2016 |
+| Ph.D. in Computer Science | University of Massachusetts Amherst | 
+| M.S. in Information Systems | Northeastern University | 
+| Master of Laws | Washington University in St. Louis |  
+| Master of Laws | Beijing Normal University | 
+| B.A. / B.Econ. in Finance | Tianjin Foreign Studies University Foreign Affairs College |
 
 ---
 
 ## Publications & Posters
 
 - **AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker**  
-  *CHI 2025* · Das Swain, V., Zhong, Q., ..., Suh, J., Mishra, V., Saha, K., & Hernandez, J. · [ACM DL](https://dl.acm.org/doi/10.1145)
+  *CHI 2025* · Das Swain, V., **Zhong, Q.**, ..., Suh, J., Mishra, V., Saha, K., & Hernandez, J. · [ACM DL](https://dl.acm.org/doi/10.1145)
 
-- **Evaluating LLMs’ Recognition and Repair of Alliance Ruptures in Mental Health Conversations**  
-  *IMWUT 2026, under review* · Lee, J., Zhong, Q., Goel, D., Yoo, D. W., Saha, K., Rodriguez, V. J., & Karkar, R.
+- **[Under Review] Evaluating LLMs’ Recognition and Repair of Alliance Ruptures in Mental Health Conversations**  
+  *IMWUT 2026, under review* · Lee, J., **Zhong, Q.**, Goel, D., Yoo, D. W., Saha, K., Rodriguez, V. J., & Karkar, R.
+
+- **Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles**  
+  Drishti Goel, Agam Goyal, Veda Duddu, Olivia Pal, Jeongah Lee, **Qiuyue Joy Zhong**, Violeta J. Rodriguez, Daniel S. Brown, Dong Whi Yoo, Ravi Karkar, Koustuv Saha · [arXiv](https://arxiv.org/pdf/2605.29473)
 
 - **RubRIX: Rubric-driven Risk Mitigation in Caregiver-AI Interactions**  
-  *ACL 2026* · Goel, D., Lee, J., Zhong, Q., ..., Karkar, R., Yoo, D. W., & Saha, K. · [arXiv](https://arxiv.org/abs/2601.13235)
+  *ACL 2026* · Goel, D., Lee, J., **Zhong, Q.**, ..., Karkar, R., Yoo, D. W., & Saha, K. · [arXiv](https://arxiv.org/abs/2601.13235)
 
 - **DYMOND: A Seamful Approach to Passive Sensing for Digital Phenotyping in Mental Health**  
-  *2024 Digital Health Summit* · Wang, O., Tongtawee, T., Hsu, J., Zhong, Q., Jacobson, N. C., Mishra, V., & Das Swain, V.
-
+  *2024 Digital Health Summit* · Wang, O., Tongtawee, T., Hsu, J., **Zhong, Q.**, Jacobson, N. C., Mishra, V., & Das Swain, V.
 ---
 
 ## Research Projects
@@ -112,32 +114,45 @@ With a cross-disciplinary background in business and law, I study how technologi
 
 - **CEL Consultant** — Teachfloor  
   *Jan 2022 – Mar 2022 · Silicon Valley, CA, United States · Hybrid*  
-  Formulated product development and market expansion strategies for educational software. Used Google Analytics to support product and market analysis; evaluated competitors to identify product positioning and growth opportunities; interviewed technology professionals to understand market needs and user expectations.
+  Formulated product development and market expansion strategies for educational software.  
+  - Used Google Analytics to support product and market analysis.  
+  - Evaluated competitors to identify product positioning and growth opportunities.  
+  - Interviewed technology professionals to understand market needs and user expectations.  
 
 - **Investment Banking Intern** — CITIC Securities Company Limited  
   *May 2020 – Jul 2020 · Guangzhou, Guangdong, China · On-site*  
-  Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company. Assisted in prospectus preparation; collaborated with cross-functional teams, clients, lawyers, accountants, and auditors; conducted industry research using profit models, business models, client interviews, and supplier interviews; supported financial audit, internal control testing, and legal due diligence.  
-  **Skills:** Negotiation, Initial Public Offerings, Industry Research, Due Diligence, Financial Analysis
+  Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company.  
+  - Assisted in prospectus preparation and coordinated with clients, lawyers, accountants, auditors, and cross-functional teams.  
+  - Conducted industry research using profit models, business models, client interviews, and supplier interviews.  
+  - Supported financial audit, internal control testing, and legal due diligence to ensure accuracy, transparency, and risk mitigation.  
 
 - **Legal Associate** — Jingsh Law Firm  
   *Feb 2019 – Aug 2019 · Beijing, China · On-site*  
-  Worked on litigation and capital market legal services. Handled civil and commercial litigation and enforcement cases; conducted due diligence for listed-company projects and supported mergers and acquisitions; communicated with judges, mentors, clients, and other stakeholders to support favorable case outcomes.  
-  **Skills:** Litigation, Civil Litigation, Capital Market Legal Services, Due Diligence, Mergers and Acquisitions
+  Worked on litigation and capital market legal services.  
+  - Handled civil and commercial litigation and enforcement cases.  
+  - Conducted due diligence for listed-company projects and supported mergers and acquisitions.  
+  - Communicated with judges, mentors, clients, and stakeholders to support favorable case outcomes.  
 
 - **Assistant to the Director** — Beijing China International Travel Service Co., Ltd.  
   *Jan 2018 – Sep 2018 · Beijing, China · On-site*  
-  Supported business development, supplier negotiation, and organizational strategy implementation. Led negotiations with suppliers to support business growth and attract new clients; implemented integrated online and offline strategies to improve collaboration and efficiency; helped develop a “benefit-sharing community” performance assessment mechanism; organized and executed business conferences.  
-  **Skills:** Negotiation, Corporate Law, Business Development, Operations Strategy
+  Supported business development, supplier negotiation, and organizational strategy implementation.  
+  - Led supplier negotiations to support business growth and attract new clients.  
+  - Implemented integrated online and offline strategies to improve collaboration and work efficiency.  
+  - Helped develop a “benefit-sharing community” performance assessment mechanism and organized business conferences.  
 
 - **Co-Founder** — Baidu Sales Department's Vendor · Self-employed  
   *2016 – 2017 · Beijing, China · Hybrid*  
-  Led a team to create user-friendly websites for Baidu’s sales team. Guided designers and engineers in UI/UX design and front-end development using HTML and CSS; established front-end and back-end connectivity through RESTful APIs; supported Baidu’s sales operations through user-centered web design and product development.  
-  **Skills:** Product Management, UI/UX Design, HTML, CSS, RESTful APIs
+  Led a team to create user-friendly websites for Baidu’s sales team.  
+  - Guided designers and engineers in UI/UX design and front-end development using HTML and CSS.  
+  - Established front-end and back-end connectivity through RESTful APIs.  
+  - Supported Baidu’s sales operations through user-centered web design and product development.  
 
 - **Sales and Marketing Intern** — Mobvoi  
   *Oct 2015 – Feb 2016 · Beijing, China · On-site*  
-  Supported sales and marketing strategies for smart hardware and e-commerce platforms. Contributed to Mobvoi’s sales performance, helping the company reach the second-highest position in global smart hardware sales, following Apple; executed marketing and sales strategies for e-commerce platforms; collaborated with Amazon, JD.com, and Suning on joint marketing initiatives, placements, discounts, and subsidies.  
-  **Skills:** Marketing, Business Development, Sales Strategy, E-commerce, Partnership Management
+  Supported sales and marketing strategies for smart hardware and e-commerce platforms.  
+  - Contributed to Mobvoi’s sales performance in the global smart hardware market.  
+  - Executed marketing and sales strategies for e-commerce platforms.  
+  - Collaborated with Amazon, JD.com, and Suning on joint marketing initiatives, placements, discounts, and subsidies.  
 
 ---
 
