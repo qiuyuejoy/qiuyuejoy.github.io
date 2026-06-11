@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qiuyue (Joy) Zhong — Computer Science Ph.D. Student in HCI at the University of Massachusetts Amherst.">
+  <title>Qiuyue (Joy) Zhong</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5d6878;
+      --accent: #315f7d;
+      --accent-soft: #edf4f7;
+      --line: #dce4e8;
+      --paper: #ffffff;
+      --background: #f7f9fa;
+      --shadow: 0 18px 45px rgba(25, 52, 68, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #183f59;
+    }
+
+    .site-shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 20px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .wordmark {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+      gap: 64px;
+      align-items: center;
+      margin: 20px 0 30px;
+      padding: clamp(32px, 6vw, 72px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.18;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      letter-spacing: -0.045em;
+    }
+
+    .title {
+      max-width: 620px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: clamp(0.94rem, 1.5vw, 1.06rem);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .contact-links a,
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 0.87rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .contact-links a:hover,
+    .resource-link:hover {
+      color: var(--accent);
+      border-color: #a9beca;
+      transform: translateY(-1px);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      display: block;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 18px 18px 0 var(--accent-soft);
+    }
+
+    main {
+      padding-bottom: 80px;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+      padding: 58px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.3fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    h2 {
+      position: sticky;
+      top: 24px;
+      margin: 0;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      letter-spacing: -0.025em;
+    }
+
+    .about-copy {
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      line-height: 1.8;
+    }
+
+    .about-copy p:first-child {
+      margin-top: 0;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.14rem;
+    }
+
+    .card p {
+      margin: 7px 0 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .resource-link {
+      min-height: 30px;
+      margin-left: 5px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      vertical-align: middle;
+    }
+
+    .education-grid {
+      display: grid;
+      gap: 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .education-card {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .education-card:last-child {
+      border-bottom: 0;
+    }
+
+    .education-card strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .education-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .project-card,
+    .experience-card {
+      padding-left: 26px;
+    }
+
+    .experience-card ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .skill-card {
+      padding: 22px;
+      background: var(--accent-soft);
+      border: 1px solid #d5e2e7;
+      border-radius: 14px;
+    }
+
+    .skill-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.03rem;
+    }
+
+    .skill-card span {
+      color: #465665;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 0 0 38px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(180px, 230px);
+        gap: 32px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      h2 {
+        position: static;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-shell {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .topbar {
+        padding-bottom: 10px;
+      }
+
+      nav {
+        gap: 6px 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+        padding: 25px;
+      }
+
+      .portrait {
+        width: min(100%, 280px);
+        justify-self: start;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .project-card,
+      .experience-card {
+        padding-left: 21px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header class="site-shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a class="wordmark" href="#">Qiuyue (Joy) Zhong</a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About Me</a>
+          <a href="#education">Education</a>
+          <a href="#publications">Publications &amp; Posters</a>
+          <a href="#projects">Research Projects</a>
+          <a href="#experience">Industry Experience</a>
+          <a href="#skills">Skills</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Computer Science Ph.D. Student in HCI</p>
+        <h1>Qiuyue (Joy) Zhong</h1>
+        <p class="title">Computer Science Ph.D. Student in HCI, University of Massachusetts Amherst</p>
+        <div class="contact-links" aria-label="Contact links">
+          <a href="mailto:qzhong@umass.edu">📧 qzhong@umass.edu</a>
+          <a href="https://www.linkedin.com/in/joy-qiuyue-zhong/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=r6-xE8EAAAAJ">Google Scholar</a>
+          <a href="https://github.com/qiuyuejoy">GitHub</a>
+        </div>
+      </div>
+      <img class="portrait" src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" alt="Qiuyue Joy Zhong">
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section id="about">
+      <div class="section-heading">
+        <h2>About Me</h2>
+        <div class="about-copy">
+          <p>I am a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <a href="https://people.cs.umass.edu/~rkarkar/">Professor Ravi Karkar</a>. My research lies at the intersection of human-centered AI, social computing, and positive computing.</p>
+          <p>With a cross-disciplinary background in business and law, I study how technologies can support well-being across personal, interpersonal, and organizational contexts. My work explores how AI systems can support emotional regulation, meaningful interaction, and decision-making for collective well-being.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-heading">
+        <h2>Education</h2>
+        <div class="education-grid">
+          <div class="education-card"><strong>Ph.D. in Computer Science</strong><span>University of Massachusetts Amherst</span></div>
+          <div class="education-card"><strong>M.S. in Information Systems</strong><span>Northeastern University</span></div>
+          <div class="education-card"><strong>Master of Laws</strong><span>Washington University in St. Louis</span></div>
+          <div class="education-card"><strong>Master of Laws</strong><span>Beijing Normal University</span></div>
+          <div class="education-card"><strong>B.A. / B.Econ. in Finance</strong><span>Tianjin Foreign Studies University Foreign Affairs College</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-heading">
+        <h2>Publications &amp; Posters</h2>
+        <div class="card-list">
+          <article class="card">
+            <h3>AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
+            <p class="meta"><em>CHI 2025</em> · Das Swain, V., <strong>Zhong, Q.</strong>, ..., Suh, J., Mishra, V., Saha, K., &amp; Hernandez, J. · <a class="resource-link" href="https://dl.acm.org/doi/10.1145/3706598.3713705">ACM DL</a></p>
+          </article>
+          <article class="card">
+            <h3>Evaluating LLMs’ Recognition and Repair of Alliance Ruptures in Mental Health Conversations</h3>
+            <p class="meta"><em>IMWUT 2026, under review</em> · Lee, J., <strong>Zhong, Q.</strong>, Goel, D., Yoo, D. W., Saha, K., Rodriguez, V. J., &amp; Karkar, R.</p>
+          </article>
+          <article class="card">
+            <h3>Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
+            <p class="meta"><em>EMNLP 2026</em> · Drishti Goel, Agam Goyal, Veda Duddu, Olivia Pal, Jeongah Lee, <strong>Qiuyue Joy Zhong</strong>, Violeta J. Rodriguez, Daniel S. Brown, Dong Whi Yoo, Ravi Karkar, Koustuv Saha · <a class="resource-link" href="https://arxiv.org/pdf/2605.29473">arXiv</a></p>
+          </article>
+          <article class="card">
+            <h3>RubRIX: Rubric-driven Risk Mitigation in Caregiver-AI Interactions</h3>
+            <p class="meta"><em>ACL 2026</em> · Goel, D., Lee, J., <strong>Zhong, Q.</strong>, ..., Karkar, R., Yoo, D. W., &amp; Saha, K. · <a class="resource-link" href="https://arxiv.org/abs/2601.13235">arXiv</a></p>
+          </article>
+          <article class="card">
+            <h3>DYMOND: A Seamful Approach to Passive Sensing for Digital Phenotyping in Mental Health</h3>
+            <p class="meta"><em>2024 Digital Health Summit</em> · Wang, O., Tongtawee, T., Hsu, J., <strong>Zhong, Q.</strong>, Jacobson, N. C., Mishra, V., &amp; Das Swain, V.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Research Projects</h2>
+        <div class="card-list">
+          <article class="card project-card">
+            <h3>AI for Workplace Communication Skills — <em>Apr 2026 – Present</em></h3>
+            <p><strong>Advisor:</strong> Ravi Karkar</p>
+            <p class="meta">Prototyping an AI system for workplace communication that delivers personalized, context-aware feedback by modeling relationship dynamics, communication intent, and user-defined goals while preserving user agency and authenticity.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Lived Informatics of Positive Computing — <em>Jan 2026 – May 2026</em></h3>
+            <p><strong>Advisors:</strong> Ravi Karkar, Koustuv Saha, DongWhi Yoo, Violeta J. Rodriguez</p>
+            <p class="meta">Led a qualitative study examining gratitude as an evolving practice and developed a multilevel framework modeling engagement dynamics and sustainability mechanisms to inform the design of long-term well-being technologies.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Knowledge Gatekeeping in Media Ecosystems — <em>Sep 2025 – Jan 2026</em></h3>
+            <p><strong>Advisors:</strong> Ravi Karkar, Ethan Zuckerman</p>
+            <p class="meta">Led a large-scale computational analysis of media coverage and academic research dissemination, developing an LLM-driven pipeline to examine how institutional gatekeeping shapes knowledge diffusion.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Repair Rupture in Human-AI Chatbots — <em>Nov 2025 – Apr 2026</em></h3>
+            <p><strong>Advisors:</strong> Ravi Karkar, Koustuv Saha, DongWhi Yoo, Violeta J. Rodriguez</p>
+            <p class="meta">Co-investigated rupture recognition in AI chatbots and evaluated its alignment with clinician assessments. Designed clinically informed repair mechanisms to support safe and effective human-AI collaboration in mental health contexts.</p>
+          </article>
+          <article class="card project-card">
+            <h3>AI on My Shoulder — <em>Apr 2024 – Sep 2024</em></h3>
+            <p><strong>Advisors:</strong> Vedant Das Swain, Varun Mishra</p>
+            <p class="meta">Designed and evaluated an LLM-based empathetic coworker system to support emotional labor in frontline workplace settings, examining how AI augmentation influences individual and workplace well-being.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Baidu Web Design and Development &amp; “Doorstep” Online-to-Offline Business — <em>2014 – 2017</em></h3>
+            <p><strong>Role:</strong> Co-Founder</p>
+            <p class="meta">Led a cross-functional team to design and launch user-centered web interfaces that improved Baidu’s online sales performance. Developed an innovative online-to-offline platform that secured ¥1M in venture capital funding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-heading">
+        <h2>Industry Experience</h2>
+        <div class="card-list">
+          <article class="card experience-card">
+            <h3>CEL Consultant — Teachfloor</h3>
+            <p class="meta"><em>Jan 2022 – Mar 2022 · Silicon Valley, CA, United States · Hybrid</em></p>
+            <p>Formulated product development and market expansion strategies for educational software.</p>
+            <ul>
+              <li>Used Google Analytics to support product and market analysis.</li>
+              <li>Evaluated competitors to identify product positioning and growth opportunities.</li>
+              <li>Interviewed technology professionals to understand market needs and user expectations.</li>
+            </ul>
+          </article>
+          <article class="card experience-card">
+            <h3>Investment Banking Intern — CITIC Securities Company Limited</h3>
+            <p class="meta"><em>May 2020 – Jul 2020 · Guangzhou, Guangdong, China · On-site</em></p>
+            <p>Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company.</p>
+            <ul>
+              <li>Assisted in prospectus preparation and coordinated with clients, lawyers, accountants, auditors, and cross-functional teams.</li>
+              <li>Conducted industry research using profit models, business models, client interviews, and supplier interviews.</li>
+              <li>Supported financial audit, internal control testing, and legal due diligence to ensure accuracy, transparency, and risk mitigation.</li>
+            </ul>
+          </article>
+          <article class="card experience-card">
+            <h3>Legal Associate — Jingsh Law Firm</h3>
+            <p class="meta"><em>Feb 2019 – Aug 2019 · Beijing, China · On-site</em></p>
+            <p>Worked on litigation and capital market legal services.</p>
+            <ul>
+              <li>Handled civil and commercial litigation and enforcement cases.</li>
+              <li>Conducted due diligence for listed-company projects and supported mergers and acquisitions.</li>
+              <li>Communicated with judges, mentors, clients, and stakeholders to support favorable case outcomes.</li>
+            </ul>
+          </article>
+          <article class="card experience-card">
+            <h3>Assistant to the Director — Beijing China International Travel Service Co., Ltd.</h3>
+            <p class="meta"><em>Jan 2018 – Sep 2018 · Beijing, China · On-site</em></p>
+            <p>Supported business development, supplier negotiation, and organizational strategy implementation.</p>
+            <ul>
+              <li>Led supplier negotiations to support business growth and attract new clients.</li>
+              <li>Implemented integrated online and offline strategies to improve collaboration and work efficiency.</li>
+              <li>Helped develop a “benefit-sharing community” performance assessment mechanism and organized business conferences.</li>
+            </ul>
+          </article>
+          <article class="card experience-card">
+            <h3>Co-Founder — Baidu Sales Department's Vendor · Self-employed</h3>
+            <p class="meta"><em>2016 – 2017 · Beijing, China · Hybrid</em></p>
+            <p>Led a team to create user-friendly websites for Baidu’s sales team.</p>
+            <ul>
+              <li>Guided designers and engineers in UI/UX design and front-end development using HTML and CSS.</li>
+              <li>Established front-end and back-end connectivity through RESTful APIs.</li>
+              <li>Supported Baidu’s sales operations through user-centered web design and product development.</li>
+            </ul>
+          </article>
+          <article class="card experience-card">
+            <h3>Sales and Marketing Intern — Mobvoi</h3>
+            <p class="meta"><em>Oct 2015 – Feb 2016 · Beijing, China · On-site</em></p>
+            <p>Supported sales and marketing strategies for smart hardware and e-commerce platforms.</p>
+            <ul>
+              <li>Contributed to Mobvoi’s sales performance in the global smart hardware market.</li>
+              <li>Executed marketing and sales strategies for e-commerce platforms.</li>
+              <li>Collaborated with Amazon, JD.com, and Suning on joint marketing initiatives, placements, discounts, and subsidies.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <strong>AI / Machine Learning</strong>
+            <span>LLM fine-tuning and alignment; LoRA / PEFT; DPO; TRL; Hugging Face</span>
+          </div>
+          <div class="skill-card">
+            <strong>Development Tools</strong>
+            <span>MongoDB; Flask; Django; React; Git; LangChain; Figma; Miro; Qualtrics</span>
+          </div>
+          <div class="skill-card">
+            <strong>Programming Languages</strong>
+            <span>Python; Java; Solidity; SQL; JavaScript; HTML; CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
