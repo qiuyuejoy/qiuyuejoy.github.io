@@ -576,16 +576,42 @@
       text-align: center;
     }
 
-    .contact-section {
-      text-align: left;
+    .life-intro {
+      max-width: 680px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
     }
 
-    .contact-section address {
-      font-style: normal;
+    .life-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      align-items: start;
+      gap: 18px;
     }
 
-    .contact-section p {
-      margin: 0 0 10px;
+    .life-gallery-column {
+      display: grid;
+      gap: 18px;
+    }
+
+    .life-photo {
+      margin: 0;
+      padding: 8px;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(67, 105, 133, 0.08);
+    }
+
+    .life-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: calc(var(--radius) - 7px);
     }
 
     .footer-note {
@@ -618,6 +644,10 @@
       }
 
       .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .life-gallery {
         grid-template-columns: 1fr;
       }
 
@@ -687,7 +717,7 @@
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+          <a href="#life">Life</a>
         </nav>
       </div>
     </div>
@@ -925,13 +955,33 @@
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="life">
       <div class="section-heading">
-        <h2>Contact</h2>
-        <address class="about-copy">
-          <p>For research collaborations, academic opportunities, and internship inquiries, contact Qiuyue Joy Zhong at <a href="mailto:qzhong@umass.edu">qzhong@umass.edu</a>.</p>
-          <p>Computer Science, University of Massachusetts Amherst</p>
-        </address>
+        <h2>Life Experience Officer</h2>
+        <div>
+          <p class="life-intro">Beyond research, I collect new perspectives from mountains, oceans, and every adventure in between.</p>
+          <div class="life-gallery">
+            <div class="life-gallery-column">
+              <figure class="life-photo">
+                <img src="hobby%20image/hawaii.jpg" alt="Enjoying the sunset by the ocean in Hawaii" width="5712" height="4284" loading="lazy">
+              </figure>
+              <figure class="life-photo">
+                <img src="hobby%20image/surfing.jpg" alt="Surfing in the ocean" width="1036" height="1601" loading="lazy">
+              </figure>
+            </div>
+            <div class="life-gallery-column">
+              <figure class="life-photo">
+                <img src="hobby%20image/climbing.jpeg" alt="Rock climbing outdoors" width="2775" height="3528" loading="lazy">
+              </figure>
+              <figure class="life-photo">
+                <img src="hobby%20image/diving.jpeg" alt="Scuba diving underwater" width="1616" height="1080" loading="lazy">
+              </figure>
+              <figure class="life-photo">
+                <img src="hobby%20image/mountain.jpg" alt="Exploring the mountains" width="1440" height="1080" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
