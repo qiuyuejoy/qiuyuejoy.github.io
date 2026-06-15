@@ -419,100 +419,6 @@
       margin-bottom: 0;
     }
 
-    .lab-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .lab-card {
-      padding: 20px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
-    }
-
-    .lab-card:first-child {
-      border-top: 4px solid #acd9f2;
-    }
-
-    .lab-card:last-child {
-      border-top: 4px solid #f1c5d5;
-    }
-
-    .lab-card-header {
-      margin-bottom: 16px;
-    }
-
-    .lab-label {
-      display: block;
-      margin-bottom: 2px;
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .lab-card h3 {
-      margin: 0;
-      font-size: 1.3rem;
-    }
-
-    .lab-card h3 a {
-      color: var(--accent-dark);
-      text-decoration: none;
-    }
-
-    .lab-card h3 a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .lab-photos {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .lab-person {
-      margin: 0;
-    }
-
-    .lab-person a {
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .lab-person img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      display: block;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: box-shadow 180ms ease, transform 180ms ease;
-    }
-
-    .lab-person a:hover img {
-      box-shadow: 0 10px 22px rgba(67, 105, 133, 0.16);
-      transform: translateY(-2px);
-    }
-
-    .lab-person figcaption {
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    .lab-person strong {
-      display: block;
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.92rem;
-    }
-
     .card-list {
       display: grid;
       gap: 18px;
@@ -715,9 +621,6 @@
         grid-template-columns: 1fr;
       }
 
-      .lab-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 620px) {
@@ -757,10 +660,6 @@
         padding-left: 21px;
       }
 
-      .lab-photos {
-        grid-template-columns: 1fr;
-      }
-
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -784,7 +683,6 @@
         <a class="wordmark" href="/" aria-label="Qiuyue Joy Zhong home">Qiuyue Joy Zhong</a>
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#labs">Labs</a>
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
@@ -846,53 +744,6 @@
         <p>I am <strong>Qiuyue (Joy) Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <a href="https://people.cs.umass.edu/~rkarkar/">Professor Ravi Karkar</a>. My research focuses on <strong>positive computing</strong>, <strong>social computing</strong>, and <strong>AI Alignment</strong></p>
         <p>Drawing on my cross-disciplinary background in <strong>law</strong> and <strong>business</strong>, I study how human-centered technologies can support individual emotional regulation, interpersonal meaningful interaction, and organizational decision-making that promotes collective well-being.</p>
       </div>
-      </div>
-    </section>
-
-    <section id="labs">
-      <div class="section-heading">
-        <h2>Research Labs</h2>
-        <div class="lab-grid">
-          <article class="lab-card">
-            <div class="lab-card-header">
-              <span class="lab-label">Current Lab</span>
-              <h3><a href="https://people.cs.umass.edu/~rkarkar/">WHAT Lab</a></h3>
-            </div>
-            <div class="lab-photos">
-              <figure class="lab-person">
-                <a href="https://people.cs.umass.edu/~rkarkar/">
-                  <img src="WHAT%20LAB/ravi.jpg" alt="Ravi Karkar with the WHAT Lab" width="1600" height="1200" loading="lazy">
-                  <figcaption><strong>Ravi Karkar</strong>Advisor</figcaption>
-                </a>
-              </figure>
-              <figure class="lab-person">
-                <img src="WHAT%20LAB/labmate.jpg" alt="Members of the WHAT Lab" width="1600" height="1200" loading="lazy">
-                <figcaption><strong>WHAT Lab</strong>Labmates</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="lab-card">
-            <div class="lab-card-header">
-              <span class="lab-label">Previous Lab</span>
-              <h3><a href="https://ubiwell.io/">UbiWell Lab</a></h3>
-            </div>
-            <div class="lab-photos">
-              <figure class="lab-person">
-                <a href="https://varunmishra.com/">
-                  <img src="ubiwell%20lab/varun.jpg" alt="Varun Mishra with the UbiWell Lab" width="1600" height="1200" loading="lazy">
-                  <figcaption><strong>Varun Mishra</strong>Advisor</figcaption>
-                </a>
-              </figure>
-              <figure class="lab-person">
-                <a href="https://vedantdasswain.com/">
-                  <img src="ubiwell%20lab/vedant.jpg" alt="Vedant Das Swain with the UbiWell Lab" width="1600" height="1200" loading="lazy">
-                  <figcaption><strong>Vedant Das Swain</strong>Advisor</figcaption>
-                </a>
-              </figure>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
