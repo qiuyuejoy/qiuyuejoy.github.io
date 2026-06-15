@@ -16,14 +16,7 @@ With a cross-disciplinary background in law and business, my research explores h
 - Social computing
 - Well-being technologies
 
-## Selected Projects and Research Directions
-
-- Designing human-centered AI systems for workplace communication
-- Studying positive computing and long-term engagement with well-being technologies
-- Supporting safe and effective human-AI interaction in mental health contexts
-- Examining knowledge diffusion and gatekeeping in media ecosystems
-
-## Links
+## Contact Info
 
 - [Personal Website](https://qiuyuejoy.github.io/)
 - [Google Scholar](https://scholar.google.com/citations?hl=en&user=r6-xE8EAAAAJ)
