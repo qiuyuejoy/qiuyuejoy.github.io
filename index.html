@@ -326,13 +326,14 @@
     }
 
     .research-interests {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
       gap: 7px;
       margin: 20px 0 0;
     }
 
     .research-interests::before {
+      grid-column: 1 / -1;
       width: 100%;
       margin-bottom: 1px;
       color: var(--muted);
@@ -352,6 +353,7 @@
       font-size: 0.86rem;
       font-weight: 600;
       line-height: 1.4;
+      white-space: nowrap;
     }
 
     .research-interests span:nth-child(1) {
@@ -853,7 +855,7 @@
       }
 
       .hero {
-        grid-template-columns: minmax(0, 1fr) minmax(180px, 230px);
+        grid-template-columns: 1fr;
         gap: 32px;
       }
 
@@ -897,6 +899,14 @@
         grid-template-columns: 1fr;
         margin-top: 10px;
         padding: 25px;
+      }
+
+      .research-interests {
+        grid-template-columns: 1fr;
+      }
+
+      .research-interests span {
+        white-space: normal;
       }
 
       .portrait {
