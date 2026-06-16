@@ -95,9 +95,11 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 8% 3%, rgba(216, 240, 255, 0.72), transparent 25rem),
-        radial-gradient(circle at 94% 16%, rgba(255, 229, 238, 0.6), transparent 24rem),
-        linear-gradient(180deg, #fffefd 0%, var(--background) 36%, #fffdf8 100%);
+        radial-gradient(circle at 8% 3%, rgba(216, 240, 255, 0.76), transparent 25rem),
+        radial-gradient(circle at 94% 16%, rgba(255, 229, 238, 0.66), transparent 24rem),
+        radial-gradient(circle at 12% 58%, rgba(255, 248, 220, 0.72), transparent 28rem),
+        radial-gradient(circle at 92% 78%, rgba(234, 246, 255, 0.76), transparent 30rem),
+        linear-gradient(180deg, #fffefd 0%, #fbfcff 34%, #fff7fb 66%, #fffdf8 100%);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 16px;
       line-height: 1.7;
@@ -277,11 +279,11 @@
     }
 
     .research-interests span:nth-child(2) {
-      background: linear-gradient(transparent 8%, #d8effc 8%);
+      background: linear-gradient(transparent 8%, #f9dce6 8%);
     }
 
     .research-interests span:nth-child(3) {
-      background: linear-gradient(transparent 8%, #f9dce6 8%);
+      background: linear-gradient(transparent 8%, #d8effc 8%);
     }
 
     .research-interests span:nth-child(4) {
@@ -426,7 +428,10 @@
 
     .card {
       padding: 24px 26px;
-      background: var(--paper);
+      background:
+        radial-gradient(circle at 96% 0%, rgba(234, 246, 255, 0.72), transparent 13rem),
+        radial-gradient(circle at 0% 100%, rgba(255, 240, 245, 0.58), transparent 14rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.96), rgba(255, 253, 248, 0.9));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
@@ -439,16 +444,28 @@
       transform: translateY(-2px);
     }
 
-    .card-list .card:nth-child(3n + 1) {
-      border-left: 4px solid #acd9f2;
+    #publications .card {
+      background:
+        radial-gradient(circle at 92% 0%, rgba(255, 248, 220, 0.98), transparent 13rem),
+        linear-gradient(135deg, rgba(255, 254, 247, 0.98), rgba(255, 248, 220, 0.72));
+      border-color: var(--yellow-line);
+      border-left: 4px solid #efd77e;
     }
 
-    .card-list .card:nth-child(3n + 2) {
+    #projects .card {
+      background:
+        radial-gradient(circle at 92% 0%, rgba(255, 240, 245, 0.98), transparent 13rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.98), rgba(255, 240, 245, 0.76));
+      border-color: var(--pink-line);
       border-left: 4px solid #f1c5d5;
     }
 
-    .card-list .card:nth-child(3n) {
-      border-left: 4px solid #efd77e;
+    #experience .card {
+      background:
+        radial-gradient(circle at 92% 0%, rgba(234, 246, 255, 0.98), transparent 13rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.98), rgba(234, 246, 255, 0.78));
+      border-color: var(--blue-line);
+      border-left: 4px solid #acd9f2;
     }
 
     .card h3 {
@@ -476,7 +493,8 @@
     .education-grid {
       display: grid;
       gap: 0;
-      background: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(255, 240, 245, 0.72), rgba(234, 246, 255, 0.72));
       border: 1px solid var(--line);
       border-radius: 14px;
       overflow: hidden;
@@ -541,20 +559,26 @@
 
     .skill-card {
       padding: 22px;
-      background: var(--blue-soft);
-      border: 1px solid var(--blue-line);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255, 248, 220, 0.98), transparent 11rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.96), rgba(255, 248, 220, 0.72));
+      border: 1px solid var(--yellow-line);
       border-radius: 14px;
       box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
     }
 
     .skill-card:nth-child(2) {
-      background: var(--pink-soft);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255, 240, 245, 0.98), transparent 11rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.96), rgba(255, 240, 245, 0.72));
       border-color: var(--pink-line);
     }
 
     .skill-card:nth-child(3) {
-      background: var(--yellow-soft);
-      border-color: var(--yellow-line);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(234, 246, 255, 0.98), transparent 11rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.96), rgba(234, 246, 255, 0.76));
+      border-color: var(--blue-line);
     }
 
     .skill-card strong {
@@ -567,6 +591,21 @@
     .skill-card span {
       color: #536174;
       font-size: 0.92rem;
+    }
+
+    .skill-card ul {
+      margin: 0;
+      padding-left: 19px;
+      color: #536174;
+      font-size: 0.92rem;
+    }
+
+    .skill-card li {
+      margin: 5px 0;
+    }
+
+    .skill-card li::marker {
+      color: var(--accent);
     }
 
     footer {
@@ -585,6 +624,31 @@
       line-height: 1.7;
     }
 
+    #life {
+      position: relative;
+      margin-top: 24px;
+      padding: clamp(34px, 5vw, 58px);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 5% 8%, rgba(255, 237, 158, 0.62), transparent 16rem),
+        radial-gradient(circle at 95% 10%, rgba(249, 220, 230, 0.78), transparent 17rem),
+        radial-gradient(circle at 10% 92%, rgba(217, 240, 223, 0.74), transparent 18rem),
+        radial-gradient(circle at 88% 88%, rgba(216, 239, 252, 0.84), transparent 19rem),
+        linear-gradient(135deg, rgba(255, 254, 254, 0.88), rgba(255, 248, 220, 0.54) 38%, rgba(255, 240, 245, 0.58) 68%, rgba(234, 246, 255, 0.72));
+      border: 0;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(67, 105, 133, 0.08);
+    }
+
+    #life h2::after {
+      background: linear-gradient(90deg, #efd77e 0 24%, #f1c5d5 24% 48%, #acd9f2 48% 74%, #b9e5c3 74%);
+    }
+
+    #life .section-heading {
+      position: relative;
+      z-index: 1;
+    }
+
     .life-gallery {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -601,10 +665,48 @@
       margin: 0;
       padding: 8px;
       overflow: hidden;
-      background: var(--paper);
-      border: 1px solid var(--line);
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #ffe49d, #f9dce6, #d8effc, #d9f0df) border-box;
+      border: 2px solid transparent;
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(67, 105, 133, 0.08);
+      box-shadow: 0 12px 30px rgba(67, 105, 133, 0.11);
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .life-photo:hover {
+      box-shadow: 0 18px 38px rgba(67, 105, 133, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .life-gallery-column:first-child .life-photo:nth-child(1) {
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #ffe49d, #f9dce6) border-box;
+    }
+
+    .life-gallery-column:first-child .life-photo:nth-child(2) {
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #d8effc, #b9e5c3) border-box;
+    }
+
+    .life-gallery-column:last-child .life-photo:nth-child(1) {
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #f9dce6, #d8effc) border-box;
+    }
+
+    .life-gallery-column:last-child .life-photo:nth-child(2) {
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #d8effc, #ffe49d) border-box;
+    }
+
+    .life-gallery-column:last-child .life-photo:nth-child(3) {
+      background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(135deg, #b9e5c3, #ffe49d, #f9dce6) border-box;
     }
 
     .life-photo img {
@@ -713,7 +815,6 @@
         <a class="wordmark" href="/" aria-label="Qiuyue Joy Zhong home">Qiuyue Joy Zhong</a>
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -731,7 +832,7 @@
         </p>
         <div class="research-interests" aria-label="Research interests">
           <span>Human-Centered AI</span>
-          <span>Positive & Social Computing</span>
+          <span>Positive &amp; Social Computing</span>
           <span>AI Alignment</span>
         </div>
         <div class="contact-links" aria-label="Contact links">
@@ -811,7 +912,7 @@
           </article>
           <article class="card">
             <h3>DYMOND: A Seamful Approach to Passive Sensing for Digital Phenotyping in Mental Health</h3>
-            <p class="meta"><em>2024 Digital Health Summit</em> · Wang, O., Tongtawee, T., Hsu, J., <strong>Zhong, Q.</strong>, Jacobson, N. C., Mishra, V., &amp; Das Swain, V.<a class="resource-link" href="https://zenodo.org/records/15203352/files/Tongtawee%20-%20DYMOND-%20Identifying%20the%20Seams%20for%20Human-in-the-Loop%20Digital%20Phenotyping%20for%20Mental%20Health.pdf?download=1">Link</a></p>
+            <p class="meta"><em>2024 Digital Health Summit</em> · Wang, O., Tongtawee, T., Hsu, J., <strong>Zhong, Q.</strong>, Jacobson, N. C., Mishra, V., &amp; Das Swain, V. <a class="resource-link" href="https://drive.google.com/file/d/1Nz9qBfajT7jFTx3lm3H8giw4XL8YvpST/view?usp=sharing">Link</a></p>
           </article>
         </div>
       </div>
@@ -822,43 +923,50 @@
         <h2>Research Projects</h2>
         <div class="card-list">
           <article class="card project-card">
-            <h3>AI for Workplace Communication Skills — <em>Apr 2026 – Present</em></h3>
-            <p><strong>Advisor:</strong> Ravi Karkar</p>
+            <h3>AI for Workplace Communication Skills</h3>
+            <p><strong>Advisor:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a></p>
+            <p class="meta"><em>Apr 2026 – Present</em></p>
             <ul>
               <li>Prototyping an AI system for workplace communication that delivers personalized, context-aware feedback by modeling relationship dynamics, communication intent, and user-defined goals while preserving user agency and authenticity.</li>
             </ul>
           </article>
           <article class="card project-card">
-            <h3>Lived Informatics of Positive Computing — <em>Jan 2026 – May 2026</em></h3>
-            <p><strong>Advisors:</strong> Ravi Karkar, Koustuv Saha, DongWhi Yoo, Violeta J. Rodriguez</p>
+            <h3>Understanding Long-Term Gratitude Practice for Positive Technology Design</h3>
+            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
+            <p class="meta"><em>Jan 2026 – May 2026</em></p>
             <ul>
-              <li>Led a qualitative study examining gratitude as an evolving practice and developed a multilevel framework modeling engagement dynamics and sustainability mechanisms to inform the design of long-term well-being technologies.</li>
+            <li>Led artifact-based semi-structured interviews and thematic analysis with 17 long-term gratitude participants to examine how gratitude practices evolve over time.</li>
+            <li>Developed an engagement evolution model with five gratitude pathways, translating findings into design implications for context-aware, multimodal, and data-driven wellbeing technologies.</li>
             </ul>
           </article>
           <article class="card project-card">
-            <h3>Knowledge Gatekeeping in Media Ecosystems — <em>Sep 2025 – Jan 2026</em></h3>
-            <p><strong>Advisors:</strong> Ravi Karkar, Ethan Zuckerman</p>
+            <h3>Knowledge Gatekeeping in Media Ecosystems</h3>
+            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://ethanzuckerman.com/">Ethan Zuckerman</a></p>
+            <p class="meta"><em>Sep 2025 – Jan 2026</em></p>
             <ul>
               <li>Led a large-scale computational analysis of media coverage and academic research dissemination, developing an LLM-driven pipeline to examine how institutional gatekeeping shapes knowledge diffusion.</li>
             </ul>
           </article>
           <article class="card project-card">
-            <h3>Repair Rupture in Human-AI Chatbots — <em>Nov 2025 – Apr 2026</em></h3>
-            <p><strong>Advisors:</strong> Ravi Karkar, Koustuv Saha, DongWhi Yoo, Violeta J. Rodriguez</p>
+            <h3>Repair Rupture in Human-AI Chatbots</h3>
+            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
+            <p class="meta"><em>Nov 2025 – Apr 2026</em></p>
             <ul>
               <li>Co-investigated rupture recognition in AI chatbots and evaluated its alignment with clinician assessments. Designed clinically informed repair mechanisms to support safe and effective human-AI collaboration in mental health contexts.</li>
             </ul>
           </article>
           <article class="card project-card">
-            <h3>AI on My Shoulder — <em>Apr 2024 – Sep 2024</em></h3>
-            <p><strong>Advisors:</strong> Vedant Das Swain, Varun Mishra</p>
+            <h3>AI on My Shoulder</h3>
+            <p><strong>Advisors:</strong> <a href="https://vedantdasswain.com/">Vedant Das Swain</a>, <a href="https://varunmishra.com/">Varun Mishra</a></p>
+            <p class="meta"><em>Apr 2024 – Sep 2024</em></p>
             <ul>
               <li>Designed and evaluated an LLM-based empathetic coworker system to support emotional labor in frontline workplace settings, examining how AI augmentation influences individual and workplace well-being.</li>
             </ul>
           </article>
           <article class="card project-card">
-            <h3>Baidu Web Design and Development &amp; “Doorstep” Online-to-Offline Business — <em>2014 – 2017</em></h3>
+            <h3>Baidu Web Design and Development &amp; “Doorstep” Online-to-Offline Business</h3>
             <p><strong>Role:</strong> Co-Founder</p>
+            <p class="meta"><em>2014 – 2017</em></p>
             <ul>
               <li>Led a cross-functional team to design and launch user-centered web interfaces that improved Baidu’s online sales performance. Developed an innovative online-to-offline platform that secured ¥1M in venture capital funding.</li>
             </ul>
@@ -939,18 +1047,36 @@
       <div class="section-heading">
         <h2>Skills</h2>
         <div class="skills-grid">
+
           <div class="skill-card">
-            <strong>AI / Machine Learning</strong>
-            <span>LLM fine-tuning and alignment; LoRA / PEFT; DPO; TRL; Hugging Face</span>
+            <strong>Research Methods</strong>
+            <ul>
+              <li>Interview protocol design</li>
+              <li>Semi-structured and artifact interviews</li>
+              <li>Thematic analysis</li>
+              <li>High-fidelity prototyping & user studies</li>
+              <li>Survey Design and Crowdsourcing</li>
+
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <strong>LLM fine-tuning and alignment</strong>
+            <ul>
+              <li>LoRA / PEFT fine-tuning</li>
+              <li>DPO, TRL, SFT→DPO pipelines</li>
+              <li><a class="resource-link" href="https://huggingface.co/Joyqiuyue">Hugging Face</a> </li>
+            </ul>
           </div>
           <div class="skill-card">
-            <strong>Development Tools</strong>
-            <span>MongoDB; Flask; Django; React; Git; LangChain; Figma; Miro; Qualtrics</span>
+            <strong>Programming &amp; Tools</strong>
+            <ul>
+              <li>Python, Java, and SQL</li>
+              <li>MongoDB, Git, Flask, Django, and React</li>
+              <li>Figma and Qualtrics</li>
+            </ul>
           </div>
-          <div class="skill-card">
-            <strong>Programming Languages</strong>
-            <span>Python; Java; Solidity; SQL; JavaScript; HTML; CSS</span>
-          </div>
+
         </div>
       </div>
     </section>
