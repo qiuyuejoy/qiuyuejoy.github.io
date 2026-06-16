@@ -166,53 +166,20 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 10px;
+      gap: 8px 20px;
       justify-content: flex-end;
     }
 
     nav a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 31px;
-      padding: 4px 11px;
-      border: 0;
-      border-radius: 999px;
-      color: var(--accent-dark);
+      color: var(--muted);
       font-size: 0.86rem;
-      font-weight: 750;
+      font-weight: 650;
       text-decoration: none;
-      box-shadow: 0 7px 16px rgba(67, 105, 133, 0.06);
-      transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
-    }
-
-    nav a:nth-child(1) {
-      background: linear-gradient(135deg, rgba(217, 204, 255, 0.72), rgba(249, 220, 230, 0.68));
-    }
-
-    nav a:nth-child(2) {
-      background: linear-gradient(135deg, rgba(255, 248, 220, 0.86), rgba(255, 233, 156, 0.72));
-    }
-
-    nav a:nth-child(3) {
-      background: linear-gradient(135deg, rgba(255, 240, 245, 0.86), rgba(241, 197, 213, 0.62));
-    }
-
-    nav a:nth-child(4) {
-      background: linear-gradient(135deg, rgba(216, 239, 252, 0.86), rgba(172, 217, 242, 0.62));
-    }
-
-    nav a:nth-child(5) {
-      background: linear-gradient(135deg, rgba(232, 246, 236, 0.9), rgba(185, 229, 195, 0.64));
-    }
-
-    nav a:nth-child(6) {
-      background: linear-gradient(135deg, rgba(255, 228, 157, 0.78), rgba(249, 220, 230, 0.72), rgba(216, 239, 252, 0.72), rgba(217, 204, 255, 0.7));
+      transition: color 160ms ease;
     }
 
     nav a:hover {
       color: var(--accent-dark);
-      box-shadow: 0 10px 22px rgba(67, 105, 133, 0.1);
-      transform: translateY(-1px);
     }
 
     .section-dock {
