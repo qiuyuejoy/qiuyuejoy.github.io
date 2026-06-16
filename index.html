@@ -166,20 +166,132 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 20px;
+      gap: 8px 10px;
       justify-content: flex-end;
     }
 
     nav a {
-      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 4px 11px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--accent-dark);
       font-size: 0.86rem;
-      font-weight: 650;
+      font-weight: 750;
       text-decoration: none;
-      transition: color 160ms ease;
+      box-shadow: 0 7px 16px rgba(67, 105, 133, 0.06);
+      transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    nav a:nth-child(1) {
+      background: linear-gradient(135deg, rgba(217, 204, 255, 0.72), rgba(249, 220, 230, 0.68));
+    }
+
+    nav a:nth-child(2) {
+      background: linear-gradient(135deg, rgba(255, 248, 220, 0.86), rgba(255, 233, 156, 0.72));
+    }
+
+    nav a:nth-child(3) {
+      background: linear-gradient(135deg, rgba(255, 240, 245, 0.86), rgba(241, 197, 213, 0.62));
+    }
+
+    nav a:nth-child(4) {
+      background: linear-gradient(135deg, rgba(216, 239, 252, 0.86), rgba(172, 217, 242, 0.62));
+    }
+
+    nav a:nth-child(5) {
+      background: linear-gradient(135deg, rgba(232, 246, 236, 0.9), rgba(185, 229, 195, 0.64));
+    }
+
+    nav a:nth-child(6) {
+      background: linear-gradient(135deg, rgba(255, 228, 157, 0.78), rgba(249, 220, 230, 0.72), rgba(216, 239, 252, 0.72), rgba(217, 204, 255, 0.7));
     }
 
     nav a:hover {
       color: var(--accent-dark);
+      box-shadow: 0 10px 22px rgba(67, 105, 133, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .section-dock {
+      position: fixed;
+      top: 50%;
+      right: 18px;
+      z-index: 9;
+      display: grid;
+      gap: 10px;
+      transform: translateY(-50%);
+    }
+
+    .section-dock a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      min-height: 34px;
+      color: var(--accent-dark);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: color 160ms ease, transform 160ms ease;
+    }
+
+    .section-dock-label {
+      padding: 4px 9px;
+      border: 1px solid rgba(201, 228, 245, 0.74);
+      border-radius: 999px;
+      background: rgba(255, 251, 255, 0.74);
+      box-shadow: 0 8px 18px rgba(67, 105, 133, 0.08);
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .section-dock-dot {
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.88);
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(67, 105, 133, 0.18);
+    }
+
+    .section-dock a:hover,
+    .section-dock a:focus-visible {
+      color: var(--ink);
+      transform: translateX(-3px);
+    }
+
+    .section-dock a:hover .section-dock-label,
+    .section-dock a:focus-visible .section-dock-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .section-dock a:nth-child(1) .section-dock-dot {
+      background: linear-gradient(135deg, #d9ccff, #f9dce6);
+    }
+
+    .section-dock a:nth-child(2) .section-dock-dot {
+      background: linear-gradient(135deg, #fff3b0, #efd77e);
+    }
+
+    .section-dock a:nth-child(3) .section-dock-dot {
+      background: linear-gradient(135deg, #f9dce6, #f1c5d5);
+    }
+
+    .section-dock a:nth-child(4) .section-dock-dot {
+      background: linear-gradient(135deg, #d8effc, #acd9f2);
+    }
+
+    .section-dock a:nth-child(5) .section-dock-dot {
+      background: linear-gradient(135deg, #e8f6ec, #b9e5c3);
+    }
+
+    .section-dock a:nth-child(6) .section-dock-dot {
+      background: linear-gradient(135deg, #ffe49d, #f9dce6, #d8effc, #d9ccff);
     }
 
     .hero {
@@ -777,6 +889,10 @@
         grid-template-columns: 1fr;
       }
 
+      .section-dock {
+        display: none;
+      }
+
     }
 
     @media (max-width: 620px) {
@@ -833,6 +949,32 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="section-dock" aria-label="Section shortcuts">
+    <a href="#about" aria-label="Jump to About">
+      <span class="section-dock-label">About</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#publications" aria-label="Jump to Publications">
+      <span class="section-dock-label">Publications</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#projects" aria-label="Jump to Projects">
+      <span class="section-dock-label">Projects</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#experience" aria-label="Jump to Experience">
+      <span class="section-dock-label">Experience</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#skills" aria-label="Jump to Skills">
+      <span class="section-dock-label">Skills</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+    <a href="#life" aria-label="Jump to Life">
+      <span class="section-dock-label">Life</span>
+      <span class="section-dock-dot" aria-hidden="true"></span>
+    </a>
+  </aside>
   <header class="site-shell">
     <div class="topbar">
       <div class="topbar-inner">
@@ -842,6 +984,7 @@
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
           <a href="#life">Life</a>
         </nav>
       </div>
