@@ -102,8 +102,8 @@
         radial-gradient(circle at 88% 82%, rgba(234, 246, 255, 0.68), transparent 30rem),
         linear-gradient(180deg, #fffefd 0%, #fbfcff 34%, #fff7fb 66%, #fffdf8 100%);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .skip-link {
@@ -263,16 +263,17 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
-      gap: 64px;
-      align-items: center;
+      grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
       margin: 20px 0 30px;
-      padding: clamp(32px, 6vw, 72px);
+      padding: clamp(24px, 5vw, 56px);
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 90% 0%, rgba(255, 230, 238, 0.8), transparent 18rem),
-        radial-gradient(circle at 7% 100%, rgba(255, 239, 153, 0.54), transparent 19rem),
+        /* pink moved to top-right, yellow moved to bottom-left */
+        radial-gradient(circle at 90% 0%, rgba(255, 230, 238, 0.36), transparent 24rem),
+        radial-gradient(circle at 7% 100%, rgba(255, 239, 153, 0.36), transparent 26rem),
         linear-gradient(135deg, rgba(234, 246, 255, 0.86), rgba(255, 240, 245, 0.9) 52%);
       border: 1px solid var(--blue-line);
       border-radius: 24px;
@@ -289,8 +290,8 @@
     h1 {
       margin: 0;
       color: #294f70;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      letter-spacing: -0.045em;
+      font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+      letter-spacing: -0.03em;
     }
 
     .title {
@@ -299,9 +300,9 @@
       gap: 5px;
       max-width: 620px;
       margin: 14px 0 0;
-      padding-left: 15px;
+      padding-left: 8px;
       color: var(--accent-dark);
-      font-size: clamp(0.94rem, 1.5vw, 1.06rem);
+      font-size: clamp(0.9rem, 1.2vw, 1.02rem);
     }
 
     .title::before {
@@ -332,18 +333,7 @@
       margin: 20px 0 0;
     }
 
-    .research-interests::before {
-      grid-column: 1 / -1;
-      width: 100%;
-      margin-bottom: 1px;
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      content: "Research interests";
-    }
-
+    /* Removed the Research interests label text so only the interest chips remain */
     .research-interests span {
       padding: 4px 9px;
       border: 0;
@@ -375,7 +365,7 @@
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px 16px;
+      gap: 10px 18px;
       margin-top: 24px;
     }
 
@@ -394,26 +384,80 @@
 
     .contact-icon {
       display: inline-grid;
-      width: 25px;
-      height: 25px;
+      width: 42px;
+      height: 42px;
       place-items: center;
-      border-radius: 7px;
-      background: var(--green-soft);
-      color: var(--accent-dark);
-      font-size: 0.72rem;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(100, 200, 230, 0.52), rgba(255, 255, 255, 0.48)),
+                  radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.8), transparent 22%),
+                  radial-gradient(circle at 75% 22%, rgba(200, 230, 255, 0.32), transparent 24%),
+                  radial-gradient(circle at 23% 70%, rgba(150, 220, 255, 0.48), transparent 26%),
+                  radial-gradient(circle at 68% 80%, rgba(255, 240, 150, 0.38), transparent 28%),
+                  linear-gradient(135deg, rgba(130, 210, 255, 0.26), rgba(255, 255, 255, 0.18) 35%, rgba(140, 210, 255, 0.22) 72%);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.75),
+                  inset 0 12px 18px rgba(255, 255, 255, 0.34),
+                  0 16px 28px rgba(78, 111, 123, 0.12);
+      backdrop-filter: blur(10px);
+      color: #d8a8e8;
+      font-size: 0.94rem;
       font-weight: 800;
       line-height: 1;
+      position: relative;
+      overflow: hidden;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .contact-icon::before {
+      content: "";
+      position: absolute;
+      inset: 6px 8px 10px 8px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.56), transparent 40%),
+                  radial-gradient(circle at 65% 65%, rgba(180, 230, 255, 0.36), transparent 30%);
+      pointer-events: none;
+    }
+
+    .contact-links a:hover .contact-icon,
+    .contact-links a:focus-visible .contact-icon {
+      transform: translateY(-1px);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8),
+                  inset 0 14px 22px rgba(255, 255, 255, 0.38),
+                  0 20px 38px rgba(78, 111, 123, 0.18);
+      background: linear-gradient(180deg, rgba(200, 160, 220, 0.6), rgba(255, 255, 255, 0.56)),
+                  radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.85), transparent 22%),
+                  radial-gradient(circle at 75% 22%, rgba(220, 190, 240, 0.38), transparent 24%),
+                  radial-gradient(circle at 23% 70%, rgba(200, 180, 230, 0.54), transparent 26%),
+                  radial-gradient(circle at 68% 80%, rgba(255, 235, 140, 0.44), transparent 28%),
+                  linear-gradient(135deg, rgba(210, 180, 240, 0.3), rgba(255, 255, 255, 0.24) 35%, rgba(200, 170, 230, 0.26) 72%);
     }
 
     .contact-icon svg {
-      width: 14px;
-      height: 14px;
+      width: 20px;
+      height: 20px;
+      display: block;
       fill: currentColor;
     }
 
     .contact-links a:hover {
       color: var(--accent-dark);
       transform: translateY(-1px);
+    }
+
+    .hero-about {
+      margin-top: 24px;
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 780px;
+    }
+
+    .hero-about p {
+      margin: 0 0 1.1em;
+    }
+
+    .hero-about p:last-child {
+      margin-bottom: 0;
     }
 
     .resource-link {
@@ -435,17 +479,21 @@
       transform: translateY(-2px);
     }
 
+    .hero-visual {
+      display: grid;
+      gap: 20px;
+      justify-items: center;
+    }
+
     .portrait {
-      width: 100%;
+      width: 300px;
+      max-width: 100%;
       aspect-ratio: 4 / 5;
       display: block;
       object-fit: cover;
       border-radius: var(--radius);
-      border: 5px solid rgba(255, 255, 255, 0.92);
-      box-shadow:
-        16px 16px 0 var(--pink-soft),
-        22px 22px 0 var(--yellow-soft),
-        0 18px 35px rgba(67, 105, 133, 0.14);
+      border: 4px solid rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 30px rgba(67, 105, 133, 0.12);
     }
 
     main {
@@ -454,7 +502,7 @@
 
     section {
       scroll-margin-top: 24px;
-      padding: 58px 0;
+      padding: 44px 0;
       border-bottom: 1px solid var(--line);
     }
 
@@ -464,8 +512,8 @@
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(180px, 0.3fr) minmax(0, 1fr);
-      gap: 48px;
+      grid-template-columns: minmax(160px, 0.28fr) minmax(0, 1fr);
+      gap: 36px;
       align-items: start;
     }
 
@@ -474,8 +522,8 @@
       top: 24px;
       margin: 0;
       color: var(--accent-dark);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      letter-spacing: -0.025em;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      letter-spacing: -0.02em;
     }
 
     h2::after {
@@ -520,41 +568,32 @@
 
     .card-list {
       display: grid;
-      gap: 18px;
+      gap: 12px;
     }
 
     .card {
-      padding: 24px 26px;
-      background:
-        radial-gradient(circle at 96% 0%, rgba(234, 246, 255, 0.72), transparent 13rem),
-        radial-gradient(circle at 0% 100%, rgba(255, 240, 245, 0.58), transparent 14rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.86), rgba(255, 248, 253, 0.78));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
-      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      padding: 10px 12px;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: none;
+      transition: background-color 140ms ease, transform 140ms ease;
     }
 
     .card:hover {
-      border-color: var(--blue-line);
-      box-shadow: 0 12px 26px rgba(67, 105, 133, 0.09);
-      transform: translateY(-2px);
+      background-color: rgba(255,255,255,0.025);
+      transform: translateY(-1px);
     }
 
     #publications .card {
-      background:
-        radial-gradient(circle at 92% 0%, rgba(255, 249, 207, 0.96), transparent 13rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.84), rgba(255, 249, 207, 0.72));
-      border-color: var(--yellow-line);
-      border-left: 4px solid #ffd86b;
+      background: transparent;
+      border-left: 0;
     }
 
     #projects .card {
-      background:
-        radial-gradient(circle at 92% 0%, rgba(255, 240, 245, 0.98), transparent 13rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.84), rgba(255, 240, 245, 0.76));
-      border-color: var(--pink-line);
-      border-left: 4px solid #f1c5d5;
+      background: transparent;
+      border-left: 0;
     }
 
     #experience h2::after {
@@ -562,16 +601,13 @@
     }
 
     #experience .card {
-      background:
-        radial-gradient(circle at 92% 0%, rgba(234, 246, 255, 0.98), transparent 13rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.84), rgba(234, 246, 255, 0.78));
-      border-color: var(--blue-line);
-      border-left: 4px solid #acd9f2;
+      background: transparent;
+      border-left: 0;
     }
 
     .card h3 {
       margin: 0 0 6px;
-      font-size: 1.14rem;
+      font-size: 1rem;
     }
 
     .card p {
@@ -580,7 +616,7 @@
 
     .meta {
       color: var(--muted);
-      font-size: 0.91rem;
+      font-size: 0.86rem;
     }
 
     .venue-badge {
@@ -676,7 +712,30 @@
 
     .project-card,
     .experience-card {
-      padding-left: 26px;
+      padding-left: 0;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding-left: 0;
+    }
+
+    .project-card-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 2px;
+    }
+
+    .project-year {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: -0.01em;
     }
 
     .project-card ul,
@@ -927,7 +986,15 @@
 
       .project-card,
       .experience-card {
-        padding-left: 21px;
+        padding-left: 0;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card-meta {
+        justify-content: flex-start;
       }
 
     }
@@ -989,65 +1056,54 @@
     </div>
 
     <div class="hero">
+      <div class="hero-visual">
+        <img class="portrait" src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" alt="Portrait of Qiuyue Joy Zhong, HCI Ph.D. student at UMass Amherst" width="340" height="425" fetchpriority="high">
+        <div class="contact-links" aria-label="Contact links">
+          <a href="mailto:qzhong@umass.edu" aria-label="Email Qiuyue Joy Zhong">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/joy-qiuyue-zhong/" rel="me" aria-label="LinkedIn profile">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.5 8.25H3V21h3.5V8.25ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.69c0-3.84-2.05-5.63-4.79-5.63a4.14 4.14 0 0 0-3.75 2.06V8.25H9V21h3.46v-6.31c0-1.66.32-3.28 2.39-3.28 2.04 0 2.06 1.91 2.06 3.39V21H21v-7.31Z"/></svg>
+            </span>
+          </a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=r6-xE8EAAAAJ" rel="me" aria-label="Google Scholar profile">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.91V16h2V8L12 2Zm-6 9.82V16l6 3.27L18 16v-4.18l-6 3.27-6-3.27Z"/></svg>
+            </span>
+          </a>
+          <a href="https://github.com/qiuyuejoy" rel="me" aria-label="GitHub profile">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.24 3.22c0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .7Z"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
       <div>
         <h1>Qiuyue Joy Zhong</h1>
         <p class="title">
-          <span class="title-role">Computer Science Ph.D. Student and HCI Researcher</span>
+          <span class="title-role">Computer Science Ph.D. Student in HCI @ UMass Amherst</span>
         </p>
-        <div class="research-interests" aria-label="Research interests">
+        <div class="research-interests">
           <span>Human-Centered AI</span>
           <span>Positive &amp; Social Computing</span>
           <span>AI Alignment  &amp; Governance</span>
         </div>
-        <div class="contact-links" aria-label="Contact links">
-          <a href="mailto:qzhong@umass.edu">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
-            </span>
-            qzhong@umass.edu
-          </a>
-          <a href="https://www.linkedin.com/in/joy-qiuyue-zhong/" rel="me">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6.5 8.25H3V21h3.5V8.25ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.69c0-3.84-2.05-5.63-4.79-5.63a4.14 4.14 0 0 0-3.75 2.06V8.25H9V21h3.46v-6.31c0-1.66.32-3.28 2.39-3.28 2.04 0 2.06 1.91 2.06 3.39V21H21v-7.31Z"/></svg>
-            </span>
-            LinkedIn
-          </a>
-          <a href="https://scholar.google.com/citations?hl=en&amp;user=r6-xE8EAAAAJ" rel="me">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.91V16h2V8L12 2Zm-6 9.82V16l6 3.27L18 16v-4.18l-6 3.27-6-3.27Z"/></svg>
-            </span>
-            Google Scholar
-          </a>
-          <a href="https://github.com/qiuyuejoy" rel="me">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.24 3.22c0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .7Z"/></svg>
-            </span>
-            GitHub
-          </a>
+        <div class="hero-about">
+          <p>
+            I am <strong>Qiuyue (Joy) Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <a href="https://people.cs.umass.edu/~rkarkar/">Professor Ravi Karkar</a>. My research focuses on <strong>positive computing</strong>, <strong>social computing</strong>, and <strong>AI alignment and governance</strong>.
+          </p>
+          <p>
+            Drawing on my cross-disciplinary background in <strong>business</strong>, <strong>law</strong>, and <strong>information systems</strong>, I bring socio-legal and organizational perspectives to the design of human-centered technologies. My research explores how these technologies can support emotional regulation, meaningful interpersonal interaction, and organizational decision-making that promotes collective well-being, with a focus on value-aligned and socially accountable AI.
+          </p>
         </div>
       </div>
-      <img class="portrait" src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" alt="Portrait of Qiuyue Joy Zhong, HCI Ph.D. student at UMass Amherst" width="340" height="425" fetchpriority="high">
     </div>
   </header>
 
   <main id="main-content" class="site-shell">
-    <section id="about">
-      <div class="section-heading">
-        <h2>About</h2>
-
-      <div class="about-copy">
-        <p>
-          I am <strong>Qiuyue (Joy) Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <a href="https://people.cs.umass.edu/~rkarkar/">Professor Ravi Karkar</a>. My research focuses on <strong>positive computing</strong>, <strong>social computing</strong>, and <strong>AI alignment and governance</strong>.
-        </p>
-
-        <p>
-          Drawing on my cross-disciplinary background in <strong>business</strong>, <strong>law</strong>, and <strong>information systems</strong>, I bring socio-legal and organizational perspectives to the design of human-centered technologies. My research explores how these technologies can support emotional regulation, meaningful interpersonal interaction, and organizational decision-making that promotes collective well-being, with a focus on value-aligned and socially accountable AI.
-        </p>
-      </div>
-      </div>
-    </section>
-
-
     <section id="publications">
       <div class="section-heading">
         <h2>Publications &amp; Posters</h2>
@@ -1073,54 +1129,45 @@
         <h2>Research Projects</h2>
         <div class="card-list">
           <article class="card project-card">
-            <h3>AI for Workplace Communication Skills</h3>
-            <p><strong>Advisor:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a></p>
-            <p class="meta"><em>Apr 2026 – Present</em></p>
-            <ul>
-              <li>Prototyping an AI system for workplace communication that delivers personalized, context-aware feedback by modeling relationship dynamics, communication intent, and user-defined goals while preserving user agency and authenticity.</li>
-            </ul>
+            <div class="project-card-meta"><span class="project-year">2026</span></div>
+            <div>
+              <h3>Context-Aware AI for Workplace Communication </h3>
+              <p><strong>Advisor:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a></p>
+            </div>
           </article>
           <article class="card project-card">
-            <h3>Understanding Long-Term Gratitude Practice for Positive Technology Design</h3>
-            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
-            <p class="meta"><em>Jan 2026 – May 2026</em></p>
-            <ul>
-            <li>Led artifact-based semi-structured interviews and thematic analysis with 17 long-term gratitude participants to examine how gratitude practices evolve over time.</li>
-            <li>Developed an engagement evolution model with five gratitude pathways, translating findings into design implications for context-aware, multimodal, and data-driven wellbeing technologies.</li>
-            </ul>
+            <div class="project-card-meta"><span class="project-year">2026</span></div>
+            <div>
+              <h3>Understanding Long-Term Gratitude Practice for Positive Technology Design</h3>
+              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
+            </div>
           </article>
+
           <article class="card project-card">
-            <h3>Knowledge Gatekeeping in Media Ecosystems</h3>
-            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://ethanzuckerman.com/">Ethan Zuckerman</a></p>
-            <p class="meta"><em>Sep 2025 – Jan 2026</em></p>
-            <ul>
-              <li>Led a large-scale computational analysis of media coverage and academic research dissemination, developing an LLM-driven pipeline to examine how institutional gatekeeping shapes knowledge diffusion.</li>
-            </ul>
+            <div class="project-card-meta"><span class="project-year">2026</span></div>
+            <div>
+              <h3>Resolving Ruptures: Mental Health Professionals’ Perspectives on How LLMs
+Identify and Resolve Conversational Ruptures </h3>
+              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
+            </div>
           </article>
+
+                    <article class="card project-card">
+            <div class="project-card-meta"><span class="project-year">2025</span></div>
+            <div>
+              <h3>LLM-Based Analysis of Knowledge Gatekeeping in Media Ecosystems</h3>
+              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://ethanzuckerman.com/">Ethan Zuckerman</a></p>
+            </div>
+          </article>
+
           <article class="card project-card">
-            <h3>Repair Rupture in Human-AI Chatbots</h3>
-            <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/">Ravi Karkar</a>, <a href="https://koustuv.com/">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig">Violeta J. Rodriguez</a></p>
-            <p class="meta"><em>Nov 2025 – Apr 2026</em></p>
-            <ul>
-              <li>Co-investigated rupture recognition in AI chatbots and evaluated its alignment with clinician assessments. Designed clinically informed repair mechanisms to support safe and effective human-AI collaboration in mental health contexts.</li>
-            </ul>
+            <div class="project-card-meta"><span class="project-year">2024</span></div>
+            <div>
+              <h3>AI on My Shoulder</h3>
+              <p><strong>Advisors:</strong> <a href="https://vedantdasswain.com/">Vedant Das Swain</a>, <a href="https://varunmishra.com/">Varun Mishra</a></p>
+            </div>
           </article>
-          <article class="card project-card">
-            <h3>AI on My Shoulder</h3>
-            <p><strong>Advisors:</strong> <a href="https://vedantdasswain.com/">Vedant Das Swain</a>, <a href="https://varunmishra.com/">Varun Mishra</a></p>
-            <p class="meta"><em>Apr 2024 – Sep 2024</em></p>
-            <ul>
-              <li>Designed and evaluated an LLM-based empathetic coworker system to support emotional labor in frontline workplace settings, examining how AI augmentation influences individual and workplace well-being.</li>
-            </ul>
-          </article>
-          <article class="card project-card">
-            <h3>Baidu Web Design and Development &amp; “Doorstep” Online-to-Offline Business</h3>
-            <p><strong>Role:</strong> Co-Founder</p>
-            <p class="meta"><em>2014 – 2017</em></p>
-            <ul>
-              <li>Led a cross-functional team to design and launch user-centered web interfaces that improved Baidu’s online sales performance. Developed an innovative online-to-offline platform that secured ¥1M in venture capital funding.</li>
-            </ul>
-          </article>
+
         </div>
       </div>
     </section>
@@ -1133,61 +1180,31 @@
             <h3>CEL Consultant — Teachfloor</h3>
             <p class="meta"><em>Jan 2022 – Mar 2022 · Silicon Valley, CA, United States · Hybrid</em></p>
             <p>Formulated product development and market expansion strategies for educational software.</p>
-            <ul>
-              <li>Used Google Analytics to support product and market analysis.</li>
-              <li>Evaluated competitors to identify product positioning and growth opportunities.</li>
-              <li>Interviewed technology professionals to understand market needs and user expectations.</li>
-            </ul>
           </article>
           <article class="card experience-card">
             <h3>Investment Banking Intern — CITIC Securities</h3>
             <p class="meta"><em>May 2020 – Jul 2020 · Guangzhou, Guangdong, China · On-site</em></p>
             <p>Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company.</p>
-            <ul>
-              <li>Assisted in prospectus preparation and coordinated with clients, lawyers, accountants, auditors, and cross-functional teams.</li>
-              <li>Conducted industry research using profit models, business models, client interviews, and supplier interviews.</li>
-              <li>Supported financial audit, internal control testing, and legal due diligence to ensure accuracy, transparency, and risk mitigation.</li>
-            </ul>
           </article>
           <article class="card experience-card">
             <h3>Legal Associate — Jingsh Law Firm</h3>
             <p class="meta"><em>Feb 2019 – Aug 2019 · Beijing, China · On-site</em></p>
             <p>Worked on litigation and capital market legal services.</p>
-            <ul>
-              <li>Handled civil and commercial litigation and enforcement cases.</li>
-              <li>Conducted due diligence for listed-company projects and supported mergers and acquisitions.</li>
-              <li>Communicated with judges, mentors, clients, and stakeholders to support favorable case outcomes.</li>
-            </ul>
           </article>
           <article class="card experience-card">
             <h3>Assistant to the Director — Beijing China International Travel Service Co., Ltd.</h3>
             <p class="meta"><em>Jan 2018 – Sep 2018 · Beijing, China · On-site</em></p>
             <p>Supported business development, supplier negotiation, and organizational strategy implementation.</p>
-            <ul>
-              <li>Led supplier negotiations to support business growth and attract new clients.</li>
-              <li>Implemented integrated online and offline strategies to improve collaboration and work efficiency.</li>
-              <li>Helped develop a “benefit-sharing community” performance assessment mechanism and organized business conferences.</li>
-            </ul>
           </article>
           <article class="card experience-card">
             <h3>Co-Founder — Baidu Sales Department's Vendor</h3>
             <p class="meta"><em>2016 – 2017 · Beijing, China · Hybrid</em></p>
             <p>Led a team to create user-friendly websites for Baidu’s sales team.</p>
-            <ul>
-              <li>Guided designers and engineers in UI/UX design and front-end development using HTML and CSS.</li>
-              <li>Established front-end and back-end connectivity through RESTful APIs.</li>
-              <li>Supported Baidu’s sales operations through user-centered web design and product development.</li>
-            </ul>
           </article>
           <article class="card experience-card">
             <h3>Sales and Marketing Intern — Mobvoi</h3>
             <p class="meta"><em>Oct 2015 – Feb 2016 · Beijing, China · On-site</em></p>
             <p>Supported sales and marketing strategies for smart hardware and e-commerce platforms.</p>
-            <ul>
-              <li>Contributed to Mobvoi’s sales performance in the global smart hardware market.</li>
-              <li>Executed marketing and sales strategies for e-commerce platforms.</li>
-              <li>Collaborated with Amazon, JD.com, and Suning on joint marketing initiatives, placements, discounts, and subsidies.</li>
-            </ul>
           </article>
         </div>
       </div>
