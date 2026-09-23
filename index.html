@@ -149,7 +149,13 @@
     }
 
     .topbar {
-      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 8px 0;
+      background: rgba(255, 255, 255, 0.93);
+      border-bottom: 1px solid rgba(210, 222, 232, 0.55);
+      backdrop-filter: blur(10px);
     }
 
     .topbar-inner {
@@ -170,20 +176,46 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 20px;
+      gap: 0 32px;
       justify-content: flex-end;
     }
 
     nav a {
+      position: relative;
+      padding: 12px 0;
       color: var(--muted);
       font-size: 0.93rem;
-      font-weight: 650;
+      font-weight: 500;
       text-decoration: none;
       transition: color 160ms ease;
     }
 
-    nav a:hover {
-      color: #d98200;
+    nav a:hover,
+    nav a[aria-current="location"] {
+      color: #294f70;
+      text-decoration: none;
+    }
+
+    nav a[aria-current="location"] {
+      font-weight: 600;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: #acd9f2;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 160ms ease;
+    }
+
+    nav a[aria-current="location"]::after {
+      opacity: 1;
     }
 
     .section-dock {
@@ -272,7 +304,7 @@
       align-items: start;
       margin: 28px 0 20px;
       padding: 0;
-      scroll-margin-top: 24px;
+      scroll-margin-top: calc(var(--nav-height, 70px) + 20px);
     }
 
     h1,
@@ -536,7 +568,7 @@
     }
 
     section {
-      scroll-margin-top: 24px;
+      scroll-margin-top: calc(var(--nav-height, 70px) + 20px);
       padding: 28px 0;
       border-bottom: 0;
     }
@@ -554,7 +586,7 @@
 
     h2 {
       position: sticky;
-      top: 24px;
+      top: calc(var(--nav-height, 70px) + 20px);
       margin: 0;
       color: var(--accent-dark);
       font-size: clamp(1.3rem, 2vw, 1.5rem);
@@ -786,18 +818,18 @@
     }
 
     .experience-tag-research {
-      background: #eaf3fa;
-      color: #496e8b;
+      background: #edf5ef;
+      color: #476a53;
     }
 
     .experience-tag-teaching {
-      background: #fbeef3;
-      color: #8a6072;
+      background: #edf5ef;
+      color: #476a53;
     }
 
     .experience-tag-industry {
-      background: #faf5df;
-      color: #807046;
+      background: #eef0f3;
+      color: #596372;
     }
 
     .experience-organization {
@@ -858,11 +890,15 @@
 
     .life-intro {
       max-width: 680px;
-      margin: 0 0 24px;
+      margin: 0 0 16px;
       color: var(--muted);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: inherit;
       font-size: 1rem;
-      line-height: 1.7;
+      line-height: 1.55;
+    }
+
+    .life-intro + .life-gallery {
+      margin-top: 24px;
     }
 
     #life {
@@ -894,57 +930,33 @@
 
     .life-photo {
       margin: 0;
-      padding: 8px;
-      overflow: hidden;
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #ffbdd2, #d8effc, #ffe87e) border-box;
-      border: 2px solid transparent;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 28px rgba(67, 105, 133, 0.1);
-      transition: box-shadow 180ms ease, transform 180ms ease;
+      padding: 3px;
+      background: var(--paper);
+      border: 1px solid #e1eaf0;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(67, 105, 133, 0.045);
+      transition: box-shadow 180ms ease;
+    }
+
+    .life-photo:nth-child(even) {
+      border-color: #eee3e8;
     }
 
     .life-photo:hover {
-      box-shadow: 0 18px 38px rgba(67, 105, 133, 0.15);
-      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(67, 105, 133, 0.08);
     }
 
-    .life-gallery-column:first-child .life-photo:nth-child(1) {
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #ffbdd2, #d8effc) border-box;
-    }
-
-    .life-gallery-column:first-child .life-photo:nth-child(2) {
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #ffe87e, #ffd9e5) border-box;
-    }
-
-    .life-gallery-column:last-child .life-photo:nth-child(1) {
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #d8effc, #ffd9e5) border-box;
-    }
-
-    .life-gallery-column:last-child .life-photo:nth-child(2) {
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #d8effc, #ffe87e) border-box;
-    }
-
-    .life-gallery-column:last-child .life-photo:nth-child(3) {
-      background:
-        linear-gradient(var(--paper), var(--paper)) padding-box,
-        linear-gradient(135deg, #ffbdd2, #ffe87e, #d8effc) border-box;
+    .life-photo a {
+      display: block;
+      border-radius: 8px;
+      cursor: zoom-in;
     }
 
     .life-photo img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: calc(var(--radius) - 7px);
+      border-radius: 8px;
     }
 
     .footer-note {
@@ -956,6 +968,7 @@
       .topbar-inner {
         align-items: flex-start;
         flex-direction: column;
+        gap: 2px;
       }
 
       nav {
@@ -996,7 +1009,7 @@
       }
 
       nav {
-        gap: 6px 14px;
+        gap: 0 28px;
       }
 
       .hero {
@@ -1070,12 +1083,11 @@
       <span class="section-dock-dot" aria-hidden="true"></span>
     </a>
   </aside>
-  <header class="site-shell">
-    <div class="topbar">
-      <div class="topbar-inner">
+  <div class="topbar">
+      <div class="topbar-inner site-shell">
         <a class="wordmark" href="/" aria-label="Joy Qiuyue Zhong home">Joy Qiuyue Zhong</a>
         <nav aria-label="Main navigation">
-          <a href="#about">About</a>
+          <a href="#about" aria-current="location">About</a>
           <a href="#publications">Publications</a>
           <a href="#experience">Experience</a>
           <a href="#life">Life</a>
@@ -1083,6 +1095,7 @@
       </div>
     </div>
 
+  <header class="site-shell">
     <div id="about" class="hero">
       <div class="hero-visual">
         <img class="portrait" src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" alt="Portrait of Joy Qiuyue Zhong, HCI Ph.D. student at UMass Amherst" width="340" height="425" fetchpriority="high">
@@ -1127,10 +1140,10 @@
             Hello, and welcome to my work and world! I’m <strong>Joy Qiuyue Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <strong><a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Professor Ravi Karkar</a></strong>.
           </p>
           <p>
-            It’s so exciting and freeing to explore research questions through bothhumanistic and technical lenses! I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. Together with my earlier experience in business and entrepreneurship, this training shapes how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
+            It’s so exciting and freeing to explore research questions through both <strong>humanistic and technical lenses</strong>! I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. Together with my earlier experience in business and entrepreneurship, this training shapes how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
           </p>
           <p>
-            This generalist mindset guides my research on how technology can support individual and collective well-being. Across related projects, I draw on psychology, sociology, and philosophy to understand people’s needs, values, and experiences, and examine how technology can support meaningful social interaction and human–AI collaboration. These interests extend to societal AI, where I seek to translate legal and ethical insights into frameworks for AI design, evaluation, and governance.
+            This generalist mindset guides my research on how technology can support <strong>individual and collective well-being</strong>. Across related projects, I draw on psychology, sociology, and philosophy to understand people’s needs, values, and experiences, and examine how technology can support meaningful social interaction and human–AI collaboration. These interests extend to <strong>societal AI</strong>, where I seek to translate legal and ethical insights into frameworks for AI design, evaluation, and governance.
           </p>
           <p class="research-goal">
             My goal is to help shape technology that responds to individual needs and respects human autonomy while accounting for diverse social values and the principles and purposes underlying law.
@@ -1258,25 +1271,37 @@
       <div class="section-heading">
         <h2>Life Experience Officer</h2>
         <div>
-          <p class="life-intro">Beyond research, I collect new perspectives from mountains, oceans, and every adventure in between.</p>
+          <p class="life-intro">Beyond research, curiosity takes me to unfamiliar places and brings me into conversation with people whose lives differ from my own. During my gap year, I traveled solo across countries, sharing stories, laughter, and adventures with people from different cultures and backgrounds.</p>
+          <p class="life-intro">Whether climbing, surfing, diving, skiing, or exploring caves, I enjoy learning new skills, working through challenges, and discovering what I’m capable of. These experiences have strengthened my independence, adaptability, and openness to other perspectives—qualities I bring to research and collaboration.
+</p>
           <div class="life-gallery">
             <div class="life-gallery-column">
               <figure class="life-photo">
-                <img src="hobby%20image/hawaii.jpg" alt="Enjoying the sunset by the ocean in Hawaii" width="5712" height="4284" loading="lazy">
+                <a href="hobby%20image/hawaii.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full photo: Enjoying the sunset by the ocean in Hawaii (opens in a new tab)">
+                  <img src="hobby%20image/hawaii.jpg" alt="Enjoying the sunset by the ocean in Hawaii" width="5712" height="4284" loading="lazy">
+                </a>
               </figure>
               <figure class="life-photo">
-                <img src="hobby%20image/surfing.jpg" alt="Surfing in the ocean" width="1036" height="1372" loading="lazy">
+                <a href="hobby%20image/surfing.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full photo: Surfing in the ocean (opens in a new tab)">
+                  <img src="hobby%20image/surfing.jpg" alt="Surfing in the ocean" width="1036" height="1372" loading="lazy">
+                </a>
               </figure>
             </div>
             <div class="life-gallery-column">
               <figure class="life-photo">
-                <img src="hobby%20image/climbing.jpeg" alt="Rock climbing outdoors" width="2775" height="3528" loading="lazy">
+                <a href="hobby%20image/climbing.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View full photo: Rock climbing outdoors (opens in a new tab)">
+                  <img src="hobby%20image/climbing.jpeg" alt="Rock climbing outdoors" width="2775" height="3528" loading="lazy">
+                </a>
               </figure>
               <figure class="life-photo">
-                <img src="hobby%20image/diving.jpeg" alt="Scuba diving underwater" width="1616" height="1080" loading="lazy">
+                <a href="hobby%20image/diving.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View full photo: Scuba diving underwater (opens in a new tab)">
+                  <img src="hobby%20image/diving.jpeg" alt="Scuba diving underwater" width="1616" height="1080" loading="lazy">
+                </a>
               </figure>
               <figure class="life-photo">
-                <img src="hobby%20image/mountain.jpg" alt="Exploring the mountains" width="1440" height="1080" loading="lazy">
+                <a href="hobby%20image/mountain.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full photo: Exploring the mountains (opens in a new tab)">
+                  <img src="hobby%20image/mountain.jpg" alt="Exploring the mountains" width="1440" height="1080" loading="lazy">
+                </a>
               </figure>
             </div>
           </div>
@@ -1288,5 +1313,43 @@
   <footer class="site-shell">
     <p class="footer-note">&copy; 2026 Joy Qiuyue Zhong · HCI researcher at UMass Amherst</p>
   </footer>
+  <script>
+    (() => {
+      const bar = document.querySelector('.topbar');
+      const links = [...document.querySelectorAll('nav a[href^="#"]')];
+      const sections = links.map(link => document.querySelector(link.hash));
+      let queued = false;
+      function updateCurrentSection() {
+        queued = false;
+        const threshold = bar.getBoundingClientRect().height + 36;
+        let current = 0;
+        sections.forEach((section, index) => {
+          if (section.getBoundingClientRect().top <= threshold) current = index;
+        });
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+          current = sections.length - 1;
+        }
+        links.forEach((link, index) => {
+          if (index === current) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      function scheduleUpdate() {
+        if (!queued) {
+          queued = true;
+          requestAnimationFrame(updateCurrentSection);
+        }
+      }
+      new ResizeObserver(() => {
+        document.documentElement.style.setProperty('--nav-height', `${bar.offsetHeight}px`);
+        scheduleUpdate();
+      }).observe(bar);
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate);
+      window.addEventListener('load', scheduleUpdate);
+      window.addEventListener('hashchange', scheduleUpdate);
+      updateCurrentSection();
+    })();
+  </script>
 </body>
 </html>
