@@ -84,6 +84,7 @@
     }
 
     html {
+      font-size: 87.5%;
       scroll-behavior: smooth;
     }
 
@@ -102,8 +103,8 @@
         radial-gradient(circle at 88% 82%, rgba(234, 246, 255, 0.68), transparent 30rem),
         linear-gradient(180deg, #fffefd 0%, #fbfcff 34%, #fff7fb 66%, #fffdf8 100%);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .skip-link {
@@ -124,13 +125,16 @@
     }
 
     a {
-      color: var(--accent);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+      color: #396b94;
+      text-decoration: none;
+      transition: color 160ms ease;
     }
 
     a:hover {
-      color: var(--accent-dark);
+      color: #d98200;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
     }
 
     a:focus-visible {
@@ -140,12 +144,12 @@
     }
 
     .site-shell {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1000px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     .topbar {
-      padding: 20px 0;
+      padding: 10px 0;
     }
 
     .topbar-inner {
@@ -172,14 +176,14 @@
 
     nav a {
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.93rem;
       font-weight: 650;
       text-decoration: none;
       transition: color 160ms ease;
     }
 
     nav a:hover {
-      color: var(--accent-dark);
+      color: #d98200;
     }
 
     .section-dock {
@@ -263,21 +267,12 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
-      gap: 36px;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 40px;
       align-items: start;
-      margin: 20px 0 30px;
-      padding: clamp(24px, 5vw, 56px);
-      position: relative;
-      overflow: hidden;
-      background:
-        /* pink moved to top-right, yellow moved to bottom-left */
-        radial-gradient(circle at 90% 0%, rgba(255, 230, 238, 0.36), transparent 24rem),
-        radial-gradient(circle at 7% 100%, rgba(255, 239, 153, 0.36), transparent 26rem),
-        linear-gradient(135deg, rgba(234, 246, 255, 0.86), rgba(255, 240, 245, 0.9) 52%);
-      border: 1px solid var(--blue-line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
+      margin: 28px 0 20px;
+      padding: 0;
+      scroll-margin-top: 24px;
     }
 
     h1,
@@ -290,7 +285,7 @@
     h1 {
       margin: 0;
       color: #294f70;
-      font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
       letter-spacing: -0.03em;
     }
 
@@ -326,22 +321,41 @@
       color: var(--muted);
     }
 
-    .research-interests {
-      display: grid;
-      grid-template-columns: repeat(3, max-content);
-      gap: 7px;
-      margin: 20px 0 0;
+    .research-interest-group {
+      justify-self: stretch;
+      margin-top: 8px;
     }
 
-    /* Removed the Research interests label text so only the interest chips remain */
+    .research-interest-title {
+      position: static;
+      margin: 0 0 10px;
+      font-family: inherit;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .research-interest-title::after {
+      content: none;
+    }
+
+    .research-interests {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 0;
+    }
+
     .research-interests span {
       padding: 4px 9px;
       border: 0;
       border-radius: 5px;
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.86rem;
-      font-weight: 600;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
       line-height: 1.4;
       white-space: nowrap;
     }
@@ -365,8 +379,9 @@
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 18px;
-      margin-top: 24px;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 0;
     }
 
     .contact-links a {
@@ -439,17 +454,37 @@
     }
 
     .contact-links a:hover {
-      color: var(--accent-dark);
+      color: #d98200;
       transform: translateY(-1px);
     }
 
     .hero-about {
-      margin-top: 24px;
-      color: var(--muted);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 780px;
+      margin-top: 20px;
+      color: #4f5c6c;
+      font-family: inherit;
+      font-size: 1.2142857rem;
+      font-weight: 400;
+      line-height: 1.65;
+      max-width: 70ch;
+    }
+
+    .hero-about a {
+      color: #1e3a8a;
+    }
+
+    .hero-about a:hover {
+      color: #d98200;
+    }
+
+    .hero-about strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-about .research-goal {
+      margin-top: 1.3em;
+      padding-left: 16px;
+      border-left: 2px solid #b9d6e9;
     }
 
     .hero-about p {
@@ -473,7 +508,7 @@
     }
 
     .resource-link:hover {
-      color: var(--accent);
+      color: #d98200;
       border-color: #a9c8d9;
       box-shadow: 0 8px 18px rgba(67, 105, 133, 0.12);
       transform: translateY(-2px);
@@ -486,7 +521,7 @@
     }
 
     .portrait {
-      width: 300px;
+      width: 220px;
       max-width: 100%;
       aspect-ratio: 4 / 5;
       display: block;
@@ -497,13 +532,13 @@
     }
 
     main {
-      padding-bottom: 80px;
+      padding-bottom: 40px;
     }
 
     section {
       scroll-margin-top: 24px;
-      padding: 44px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 28px 0;
+      border-bottom: 0;
     }
 
     section:last-child {
@@ -512,8 +547,8 @@
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(160px, 0.28fr) minmax(0, 1fr);
-      gap: 36px;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
       align-items: start;
     }
 
@@ -522,7 +557,7 @@
       top: 24px;
       margin: 0;
       color: var(--accent-dark);
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      font-size: clamp(1.3rem, 2vw, 1.5rem);
       letter-spacing: -0.02em;
     }
 
@@ -534,17 +569,6 @@
       background: linear-gradient(90deg, #acd9f2 0 38%, #f1c5d5 38% 70%, #ffd86b 70%);
       border-radius: 999px;
       content: "";
-    }
-
-    #about {
-      margin-top: 24px;
-      padding: clamp(34px, 5vw, 58px);
-      background:
-        radial-gradient(circle at 8% 10%, rgba(234, 246, 255, 0.48), transparent 18rem),
-        radial-gradient(circle at 92% 90%, rgba(255, 240, 245, 0.36), transparent 18rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(255, 250, 246, 0.88));
-      border-radius: 24px;
-      box-shadow: 0 16px 38px rgba(67, 105, 133, 0.065);
     }
 
     #about h2::after {
@@ -568,14 +592,14 @@
 
     .card-list {
       display: grid;
-      gap: 12px;
+      gap: 6px;
     }
 
     .card {
       padding: 10px 12px;
       background: transparent;
       border: 0;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 0;
       border-radius: 6px;
       box-shadow: none;
       transition: background-color 140ms ease, transform 140ms ease;
@@ -587,11 +611,6 @@
     }
 
     #publications .card {
-      background: transparent;
-      border-left: 0;
-    }
-
-    #projects .card {
       background: transparent;
       border-left: 0;
     }
@@ -610,28 +629,37 @@
       font-size: 1rem;
     }
 
+    #publications .card h3 {
+      font-family: inherit;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
     .card p {
       margin: 7px 0 0;
     }
 
     .meta {
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.93rem;
     }
 
     .venue-badge {
       display: inline-flex;
       align-items: center;
-      min-height: 28px;
-      padding: 3px 11px;
-      border: 1px solid #e8cf74;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #fff9cf, #ffec8f);
-      color: #5c4a11;
+      padding: 2px 7px;
+      border: 0;
+      border-radius: 5px;
+      background: #f6f3e8;
+      color: #746b50;
+      font-size: 0.82rem;
+      line-height: 1.4;
       font-style: normal;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      box-shadow: 0 7px 16px rgba(149, 116, 28, 0.1);
+      font-weight: 500;
+    }
+
+    a.venue-badge:hover {
+      color: #d98200;
     }
 
     .venue-note {
@@ -643,7 +671,7 @@
     .paper-badge {
       display: inline-flex;
       align-items: center;
-      min-height: 28px;
+      min-height: 24px;
       padding: 3px 11px;
       border-radius: 999px;
       background: linear-gradient(135deg, #fff9cf, #ffec8f);
@@ -656,6 +684,14 @@
     .publication-authors {
       display: block;
       margin-top: 7px;
+      color: #77808e;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .publication-authors strong {
+      color: #596575;
+      font-weight: 600;
     }
 
     .resource-link {
@@ -666,132 +702,151 @@
       vertical-align: middle;
     }
 
-    .education-grid {
-      display: grid;
+    #experience .card-list {
+      --year-width: 104px;
+      --timeline-gap: 30px;
       gap: 0;
-      background:
-        linear-gradient(135deg, rgba(255, 249, 207, 0.58), rgba(255, 240, 245, 0.64), rgba(234, 246, 255, 0.66));
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
     }
 
-    .education-card {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      padding: 15px 20px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .education-card:last-child {
-      border-bottom: 0;
-    }
-
-    .education-card:nth-child(1),
-    .education-card:nth-child(2) {
-      background: var(--pink-soft);
-    }
-
-    .education-card:nth-child(3),
-    .education-card:nth-child(4) {
-      background: var(--blue-soft);
-    }
-
-    .education-card strong {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.05rem;
-      white-space: nowrap;
-    }
-
-    .education-card span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .project-card,
     .experience-card {
-      padding-left: 0;
-    }
-
-    .project-card {
+      position: relative;
       display: grid;
-      grid-template-columns: 72px minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: var(--year-width) minmax(0, 1fr);
+      gap: var(--timeline-gap);
       align-items: start;
-      padding-left: 0;
+      padding: 12px 0 18px;
+      border-radius: 0;
     }
 
-    .project-card-meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--year-width) + var(--timeline-gap) / 2);
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #d4e0e8;
+    }
+
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      left: calc(var(--year-width) + var(--timeline-gap) / 2 - 3px);
+      top: 19px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #9bb6c8;
+    }
+
+    .experience-card:first-child::before {
+      top: 22px;
+    }
+
+    .experience-card:last-child::before {
+      bottom: calc(100% - 22px);
+    }
+
+    .experience-card:hover {
+      transform: none;
+    }
+
+    .experience-year {
       padding-top: 2px;
-    }
-
-    .project-year {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent-dark);
-      letter-spacing: -0.01em;
-    }
-
-    .project-card ul,
-    .experience-card ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
       color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.5;
     }
 
-    .project-card li::marker,
-    .experience-card li::marker {
-      color: var(--accent);
+    .experience-details {
+      min-width: 0;
+      font-family: inherit;
     }
 
-    .skills-grid {
+    .card .experience-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 8px;
+      margin-bottom: 3px;
+      font-family: inherit;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .experience-tag {
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .experience-tag-research {
+      background: #eaf3fa;
+      color: #496e8b;
+    }
+
+    .experience-tag-teaching {
+      background: #fbeef3;
+      color: #8a6072;
+    }
+
+    .experience-tag-industry {
+      background: #faf5df;
+      color: #807046;
+    }
+
+    .experience-organization {
+      color: #536174;
+      font-weight: 400;
+    }
+
+    .experience-location {
+      color: #7a8491;
+      font-size: 0.93rem;
+    }
+
+    .experience-details p {
+      margin-top: 5px;
+      line-height: 1.55;
+    }
+
+    .experience-details .experience-affiliation {
+      margin-top: 0;
+    }
+
+    .experience-supplement {
+      font-size: 0.88rem;
+      color: #77808e;
+      overflow-wrap: break-word;
+    }
+
+    .experience-supplement strong {
+      font-weight: 500;
+    }
+
+    .experience-supplement a {
+      color: #617d93;
+    }
+
+    .experience-supplement a:hover {
+      color: #d98200;
+    }
+
+    .experience-card ul {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 2px;
+      margin: 5px 0 0;
+      padding-left: 17px;
+      line-height: 1.6;
     }
 
-    .skill-card {
-      padding: 22px;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(232, 246, 236, 0.98), transparent 11rem),
-        radial-gradient(circle at 0% 100%, rgba(217, 240, 223, 0.72), transparent 12rem),
-        linear-gradient(135deg, rgba(255, 253, 248, 0.84), rgba(234, 246, 255, 0.78));
-      border: 1px solid var(--green-line);
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(67, 105, 133, 0.045);
-    }
-
-    .skill-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.03rem;
-    }
-
-    .skill-card span {
-      color: #536174;
-      font-size: 0.92rem;
-    }
-
-    .skill-card ul {
-      margin: 0;
-      padding-left: 19px;
-      color: #536174;
-      font-size: 0.92rem;
-    }
-
-    .skill-card li {
-      margin: 5px 0;
-    }
-
-    .skill-card li::marker {
-      color: var(--accent);
+    .experience-card li::marker {
+      color: #9bb6c8;
     }
 
     footer {
@@ -806,23 +861,14 @@
       margin: 0 0 24px;
       color: var(--muted);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.08rem;
+      font-size: 1rem;
       line-height: 1.7;
     }
 
     #life {
       position: relative;
-      margin-top: 24px;
-      padding: clamp(34px, 5vw, 58px);
-      overflow: hidden;
-      background:
-        linear-gradient(122deg, rgba(255, 217, 229, 0.72) 0%, rgba(255, 217, 229, 0) 34%),
-        linear-gradient(238deg, rgba(216, 239, 252, 0.82) 0%, rgba(216, 239, 252, 0) 42%),
-        linear-gradient(28deg, rgba(255, 241, 168, 0.58) 0%, rgba(255, 241, 168, 0) 36%),
-        linear-gradient(135deg, #fffdf8 0%, #fff7fb 38%, #f1fbff 72%, #fffbea 100%);
-      border: 0;
-      border-radius: 24px;
-      box-shadow: 0 18px 45px rgba(67, 105, 133, 0.08);
+      margin-top: 0;
+      padding: 28px 0;
     }
 
     #life h2::after {
@@ -918,20 +964,16 @@
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 20px;
       }
 
       .section-heading {
         grid-template-columns: 1fr;
-        gap: 26px;
+        gap: 16px;
       }
 
       h2 {
         position: static;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
       }
 
       .life-gallery {
@@ -946,7 +988,7 @@
 
     @media (max-width: 620px) {
       .site-shell {
-        width: min(100% - 28px, 1120px);
+        width: min(100% - 28px, 1000px);
       }
 
       .topbar {
@@ -960,7 +1002,7 @@
       .hero {
         grid-template-columns: 1fr;
         margin-top: 10px;
-        padding: 25px;
+        padding: 0;
       }
 
       .research-interests {
@@ -972,29 +1014,25 @@
       }
 
       .portrait {
-        width: min(100%, 280px);
+        width: min(100%, 200px);
         justify-self: start;
       }
 
       section {
-        padding: 44px 0;
+        padding: 28px 0;
       }
 
       .card {
-        padding: 21px;
+        padding: 10px 0;
       }
 
-      .project-card,
+      #experience .card-list {
+        --year-width: 76px;
+        --timeline-gap: 22px;
+      }
+
       .experience-card {
-        padding-left: 0;
-      }
-
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card-meta {
-        justify-content: flex-start;
+        padding: 12px 0 18px;
       }
 
     }
@@ -1023,16 +1061,8 @@
       <span class="section-dock-label">Publications</span>
       <span class="section-dock-dot" aria-hidden="true"></span>
     </a>
-    <a href="#projects" aria-label="Jump to Projects">
-      <span class="section-dock-label">Projects</span>
-      <span class="section-dock-dot" aria-hidden="true"></span>
-    </a>
     <a href="#experience" aria-label="Jump to Experience">
       <span class="section-dock-label">Experience</span>
-      <span class="section-dock-dot" aria-hidden="true"></span>
-    </a>
-    <a href="#skills" aria-label="Jump to Skills">
-      <span class="section-dock-label">Skills</span>
       <span class="section-dock-dot" aria-hidden="true"></span>
     </a>
     <a href="#life" aria-label="Jump to Life">
@@ -1047,15 +1077,13 @@
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
           <a href="#life">Life</a>
         </nav>
       </div>
     </div>
 
-    <div class="hero">
+    <div id="about" class="hero">
       <div class="hero-visual">
         <img class="portrait" src="https://github.com/user-attachments/assets/89f22757-5383-4718-8ab3-64cd2dc717a7" alt="Portrait of Joy Qiuyue Zhong, HCI Ph.D. student at UMass Amherst" width="340" height="425" fetchpriority="high">
         <div class="contact-links" aria-label="Contact links">
@@ -1080,23 +1108,32 @@
             </span>
           </a>
         </div>
+        <div class="research-interest-group">
+          <h2 class="research-interest-title">Research interests</h2>
+          <div class="research-interests">
+            <span>Human-Centered AI</span>
+            <span>Positive &amp; Social Computing</span>
+            <span>AI Alignment &amp; Governance</span>
+          </div>
+        </div>
       </div>
       <div>
         <h1>Joy Qiuyue Zhong</h1>
         <p class="title">
           <span class="title-role">Computer Science Ph.D. Student in HCI @ UMass Amherst</span>
         </p>
-        <div class="research-interests">
-          <span>Human-Centered AI</span>
-          <span>Positive &amp; Social Computing</span>
-          <span>AI Alignment  &amp; Governance</span>
-        </div>
         <div class="hero-about">
           <p>
-            I am <strong>Qiuyue (Joy) Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Professor Ravi Karkar</a>. My research focuses on <strong>positive computing</strong>, <strong>social computing</strong>, and <strong>AI alignment and governance</strong>.
+            Hello, and welcome to my work and world! I’m <strong>Joy Qiuyue Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <strong><a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Professor Ravi Karkar</a></strong>.
           </p>
           <p>
-            Drawing on my cross-disciplinary background in <strong>business</strong>, <strong>law</strong>, and <strong>information systems</strong>, I bring socio-legal and organizational perspectives to the design of human-centered technologies. My research explores how these technologies can support emotional regulation, meaningful interpersonal interaction, and organizational decision-making that promotes collective well-being, with a focus on value-aligned and socially accountable AI.
+            It’s so exciting and freeing to explore research questions through bothhumanistic and technical lenses! I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. Together with my earlier experience in business and entrepreneurship, this training shapes how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
+          </p>
+          <p>
+            This generalist mindset guides my research on how technology can support individual and collective well-being. Across related projects, I draw on psychology, sociology, and philosophy to understand people’s needs, values, and experiences, and examine how technology can support meaningful social interaction and human–AI collaboration. These interests extend to societal AI, where I seek to translate legal and ethical insights into frameworks for AI design, evaluation, and governance.
+          </p>
+          <p class="research-goal">
+            My goal is to help shape technology that responds to individual needs and respects human autonomy while accounting for diverse social values and the principles and purposes underlying law.
           </p>
         </div>
       </div>
@@ -1106,153 +1143,113 @@
   <main id="main-content" class="site-shell">
     <section id="publications">
       <div class="section-heading">
-        <h2>Publications &amp; Posters</h2>
+        <h2>Publications</h2>
         <div class="card-list">
           <article class="card">
             <h3>Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h3>
-            <p class="meta"><span class="venue-badge">CHI 2027 under review</span><span class="publication-authors"><strong>Zhong, Q.</strong>, Lee, J., Goel, D., Rodríguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R. · <a class="resource-link" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
+            <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">CHI 2027 under review</a><span class="publication-authors"><strong>Zhong, Q.,</strong> Lee, J., Goel, D., Rodriguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R.</span></p>
           </article>
           <article class="card">
             <h3>Can LLMs identify and repair ruptures? Comparison between clinician practices and LLM behaviors</h3>
-            <p class="meta"><span class="venue-badge">CHI 2027 under review</span><span class="publication-authors">Lee, J., <strong>Zhong, Q.</strong>, Goel, D., Rodriguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R. · <a class="resource-link" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">Link</a></span></p>
+            <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">CHI 2027 under review</a><span class="publication-authors">Lee, J., <strong>Zhong, Q.,</strong> Goel, D., Rodriguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R.</span></p>
 
           </article>
           <article class="card">
             <h3>Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
-            <p class="meta"><span class="venue-badge">EMNLP 2026</span><span class="publication-authors">Goel, D., Goyal, A., Duddu, V., Pal, O., Lee, J., <strong>Zhong, Q.</strong>, Rodriguez, V. J.,...,Yoo, D. W., Karkar, R., &amp; Saha, K. · <a class="resource-link" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
+            <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">EMNLP 2026</a><span class="publication-authors">D., Goyal, A., Duddu, V., Pal, O., Lee, J., <strong>Zhong, Q. J.,</strong> ... &amp; Saha, K.</span></p>
           </article>
           <article class="card">
             <h3>RubRIX: Rubric-driven Risk Mitigation in Caregiver-AI Interactions</h3>
-            <p class="meta"><span class="venue-badge">ACL 2026</span><span class="publication-authors">Goel, D., Lee, J., <strong>Zhong, Q.</strong>, ..., Karkar, R., Yoo, D. W., &amp; Saha, K. · <a class="resource-link" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
+            <p class="meta"><a class="venue-badge" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">ACL 2026</a><span class="publication-authors">Goel, D., Lee, J., <strong>Zhong, Q.</strong>, Rodriguez, V. J., Brown, D. S., Karkar, R., ... &amp; Saha, K.</span></p>
           </article>
           <article class="card">
             <h3>AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
-            <p class="meta"><span class="venue-badge">CHI 2025</span><span class="publication-authors">Das Swain, V., <strong>Zhong, Q.</strong>, ..., Suh, J., Mishra, V., Saha, K., &amp; Hernandez, J. · <a class="resource-link" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">ACM DL</a></span></p>
+            <p class="meta"><a class="venue-badge" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">CHI 2025</a><span class="publication-authors">Das Swain, V., <strong>Zhong, Q. J.,</strong> Parekh, J. R., Jeon, Y., Zimmermann, R., Czerwinski, M. P., ... &amp; Hernandez, J.</span></p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-heading">
-        <h2>Research Projects</h2>
-        <div class="card-list">
-          <article class="card project-card">
-            <div class="project-card-meta"><span class="project-year">2026</span></div>
-            <div>
-              <h3>Context-Aware AI for Workplace Communication </h3>
-              <p><strong>Advisor:</strong> <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Ravi Karkar</a></p>
-            </div>
-          </article>
-          <article class="card project-card">
-            <div class="project-card-meta"><span class="project-year">2026</span></div>
-            <div>
-              <h3>Understanding Long-Term Gratitude Practice for Positive Technology Design</h3>
-              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Ravi Karkar</a>, <a href="https://koustuv.com/" target="_blank" rel="noopener noreferrer">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo" target="_blank" rel="noopener noreferrer">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig" target="_blank" rel="noopener noreferrer">Violeta J. Rodriguez</a></p>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-card-meta"><span class="project-year">2026</span></div>
-            <div>
-              <h3>Resolving Ruptures: Mental Health Professionals’ Perspectives on How LLMs
-Identify and Resolve Conversational Ruptures </h3>
-              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Ravi Karkar</a>, <a href="https://koustuv.com/" target="_blank" rel="noopener noreferrer">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo" target="_blank" rel="noopener noreferrer">DongWhi Yoo</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig" target="_blank" rel="noopener noreferrer">Violeta J. Rodriguez</a></p>
-            </div>
-          </article>
-
-                    <article class="card project-card">
-            <div class="project-card-meta"><span class="project-year">2025</span></div>
-            <div>
-              <h3>LLM-Based Analysis of Knowledge Gatekeeping in Media Ecosystems</h3>
-              <p><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Ravi Karkar</a>, <a href="https://ethanzuckerman.com/" target="_blank" rel="noopener noreferrer">Ethan Zuckerman</a></p>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-card-meta"><span class="project-year">2024</span></div>
-            <div>
-              <h3>AI on My Shoulder</h3>
-              <p><strong>Advisors:</strong> <a href="https://vedantdasswain.com/" target="_blank" rel="noopener noreferrer">Vedant Das Swain</a>, <a href="https://varunmishra.com/" target="_blank" rel="noopener noreferrer">Varun Mishra</a></p>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
 
     <section id="experience">
       <div class="section-heading">
-        <h2>Industry Experience</h2>
+        <h2>Experience</h2>
         <div class="card-list">
           <article class="card experience-card">
-            <h3>CEL Consultant — Teachfloor</h3>
-            <p class="meta"><em>Jan 2022 – Mar 2022 · Silicon Valley, CA, United States</em></p>
-            <p>Formulated product development and market expansion strategies for educational software.</p>
+            <div class="experience-year">2025–Present</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Researcher</span><span class="experience-tag experience-tag-research">Research</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">WHAT Lab, UMass Amherst</span></p>
+              <p class="experience-supplement"><strong>Advisors:</strong> <a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Ravi Karkar</a>, <a href="https://koustuv.com/" target="_blank" rel="noopener noreferrer">Koustuv Saha</a>, <a href="https://www.stewlab.org/yoo" target="_blank" rel="noopener noreferrer">DongWhi Yoo</a>, <a href="https://ethanzuckerman.com/" target="_blank" rel="noopener noreferrer">Ethan Zuckerman</a>, <a href="https://psychology.illinois.edu/directory/profile/vjrodrig" target="_blank" rel="noopener noreferrer">Violeta J. Rodriguez</a></p>
+            </div>
           </article>
           <article class="card experience-card">
-            <h3>Investment Banking Intern — CITIC Securities</h3>
-            <p class="meta"><em>May 2020 – Jul 2020 · Guangzhou, Guangdong, China</em></p>
-            <p>Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company.</p>
+            <div class="experience-year">2026</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Graduate Teaching Assistant</span><span class="experience-tag experience-tag-teaching">Teaching</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">UMass Amherst</span></p>
+              <ul class="experience-supplement">
+                <li>CS 571 Data Visualization &amp; Exploration</li>
+                <li>CS 563 Internet Law and Policy</li>
+                <li>CS 389 Intro to Machine Learning</li>
+              </ul>
+            </div>
           </article>
           <article class="card experience-card">
-            <h3>Legal Associate — Jingsh Law Firm</h3>
-            <p class="meta"><em>Feb 2019 – Aug 2019 · Beijing, China</em></p>
-            <p>Worked on litigation and capital market legal services.</p>
+            <div class="experience-year">2024–2025</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Research Assistant</span><span class="experience-tag experience-tag-research">Research</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Ubiwell Lab, Northeastern University</span></p>
+              <p class="experience-supplement"><strong>Advisors:</strong> <a href="https://en.wikipedia.org/wiki/Gregory_Abowd" target="_blank" rel="noopener noreferrer">Gregory D. Abowd</a>, <a href="https://varunmishra.com/" target="_blank" rel="noopener noreferrer">Varun Mishra</a>, <a href="https://vedantdasswain.com/" target="_blank" rel="noopener noreferrer">Vedant Das Swain</a></p>
+            </div>
           </article>
           <article class="card experience-card">
-            <h3>Assistant to the Director — Beijing China International Travel Service Co., Ltd.</h3>
-            <p class="meta"><em>Jan 2018 – Sep 2018 · Beijing, China</em></p>
-            <p>Supported business development, supplier negotiation, and organizational strategy implementation.</p>
+            <div class="experience-year">2022</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">CEL Consultant</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Teachfloor</span> <span class="experience-location">· Silicon Valley, CA, United States</span></p>
+              <p>Formulated product development and market expansion strategies for educational software.</p>
+            </div>
           </article>
           <article class="card experience-card">
-            <h3>Co-Founder — Baidu Sales Department's Vendor</h3>
-            <p class="meta"><em>2016 – 2017 · Beijing, China</em></p>
-            <p>Led a team to create user-friendly websites for Baidu’s sales team.</p>
+            <div class="experience-year">2020</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Investment Banking Intern</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">CITIC Securities</span> <span class="experience-location">· Guangzhou, Guangdong, China</span></p>
+              <p>Supported IPO preparation, industry research, and financial/legal due diligence for an education technology company.</p>
+            </div>
           </article>
           <article class="card experience-card">
-            <h3>Sales and Marketing Intern — Mobvoi</h3>
-            <p class="meta"><em>Oct 2015 – Feb 2016 · Beijing, China</em></p>
-            <p>Supported sales and marketing strategies for smart hardware and e-commerce platforms.</p>
+            <div class="experience-year">2019</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Legal Associate</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Jingsh Law Firm</span> <span class="experience-location">· Beijing, China</span></p>
+              <p>Worked on litigation and capital market legal services.</p>
+            </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section-heading">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-
-          <div class="skill-card">
-            <strong>Research Methods</strong>
-            <ul>
-              <li>Interview protocol design</li>
-              <li>Semi-structured and artifact interviews</li>
-              <li>Thematic analysis</li>
-              <li>High-fidelity prototyping & user studies</li>
-              <li>Survey Design and Crowdsourcing</li>
-
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <strong>LLM fine-tuning and alignment</strong>
-            <ul>
-              <li>LoRA / PEFT fine-tuning</li>
-              <li>DPO, TRL, SFT→DPO pipelines</li>
-              <li><a class="resource-link" href="https://huggingface.co/Joyqiuyue" target="_blank" rel="noopener noreferrer">Hugging Face</a> </li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <strong>Programming &amp; Tools</strong>
-            <ul>
-              <li>Python, Java, and SQL</li>
-              <li>MongoDB, Git, Flask, Django, and React</li>
-              <li>Figma and Qualtrics</li>
-            </ul>
-          </div>
-
+          <article class="card experience-card">
+            <div class="experience-year">2018</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Assistant to the General Manager</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Beijing China International Travel Service Co., Ltd.</span> <span class="experience-location">· Beijing, China</span></p>
+              <p>Coordinated business development, negotiated with suppliers, and worked with senior leadership to implement organizational strategy.</p>
+            </div>
+          </article>
+          <article class="card experience-card">
+            <div class="experience-year">2016–2017</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Co-Founder</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Baidu Sales Department's Vendor</span> <span class="experience-location">· Beijing, China</span></p>
+              <p>Led a team to create user-friendly websites for Baidu’s sales team.</p>
+            </div>
+          </article>
+          <article class="card experience-card">
+            <div class="experience-year">2015–2016</div>
+            <div class="experience-details">
+              <h3 class="experience-heading"><span class="experience-role">Sales and Marketing Intern</span><span class="experience-tag experience-tag-industry">Industry</span></h3>
+              <p class="experience-affiliation"><span class="experience-organization">Mobvoi (HKEX: 02438)</span> <span class="experience-location">· Beijing, China</span></p>
+              <p>Supported sales and marketing strategies for smart hardware and e-commerce platforms.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
