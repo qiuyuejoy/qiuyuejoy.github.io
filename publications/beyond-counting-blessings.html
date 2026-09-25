@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs | Joy Qiuyue Zhong</title>
+  <meta name="description" content="Abstract and full-text PDF of Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://qiuyuejoy.github.io/publications/beyond-counting-blessings.html">
+  <meta name="citation_title" content="Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs">
+  <meta name="citation_author" content="Zhong, Joy Qiuyue">
+  <meta name="citation_author" content="Lee, Jeongah">
+  <meta name="citation_author" content="Goel, Drishti">
+  <meta name="citation_author" content="Rodríguez, Violeta J.">
+  <meta name="citation_author" content="Yoo, Dong Whi">
+  <meta name="citation_author" content="Saha, Koustuv">
+  <meta name="citation_author" content="Karkar, Ravi">
+  <meta name="citation_publication_date" content="2026/09/18">
+  <meta name="citation_journal_title" content="arXiv preprint arXiv:2609.21853">
+  <meta name="citation_pdf_url" content="https://qiuyuejoy.github.io/publications/beyond-counting-blessings.pdf">
+  <style>
+    :root {
+      --ink: #26324a;
+      --muted: #667085;
+      --accent: #477da5;
+      --accent-dark: #315f82;
+      --blue-soft: #eaf6ff;
+      --blue-line: #c9e4f5;
+      --pink-soft: #fff0f5;
+      --pink-line: #f3d2de;
+      --yellow-soft: #fff9cf;
+      --yellow-line: #ffe8a3;
+      --green-soft: #e8f6ec;
+      --green-line: #cbe8d3;
+      --line: #dce7ed;
+      --paper: #fffdfb;
+      --background: #fbfcfd;
+      --shadow: 0 18px 45px rgba(67, 105, 133, 0.1);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 87.5%;
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      color: var(--ink);
+      background: #ffe3ed;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(216, 240, 255, 0.76), transparent 25rem),
+        radial-gradient(circle at 92% 12%, rgba(255, 229, 238, 0.66), transparent 24rem),
+        radial-gradient(circle at 14% 62%, rgba(255, 240, 245, 0.46), transparent 28rem),
+        radial-gradient(circle at 88% 82%, rgba(234, 246, 255, 0.68), transparent 30rem),
+        linear-gradient(180deg, #fffefd 0%, #fbfcff 34%, #fff7fb 66%, #fffdf8 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -80px;
+      left: 20px;
+      z-index: 10;
+      padding: 10px 14px;
+      background: var(--paper);
+      border: 2px solid var(--accent-dark);
+      border-radius: 6px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    a {
+      color: #396b94;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    a:hover {
+      color: #d98200;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #ffd86b;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .site-shell {
+      width: min(1000px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 8px 0;
+      background: rgba(255, 255, 255, 0.93);
+      border-bottom: 1px solid rgba(210, 222, 232, 0.55);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .wordmark {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.18;
+    }
+
+    h1 {
+      margin: 0;
+      color: #294f70;
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      letter-spacing: -0.03em;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--blue-line);
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .resource-link {
+      min-height: 30px;
+      margin-left: 5px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      vertical-align: middle;
+    }
+
+    .resource-link:hover {
+      color: #d98200;
+      border-color: #a9c8d9;
+      box-shadow: 0 8px 18px rgba(67, 105, 133, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .venue-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 7px;
+      border: 0;
+      border-radius: 5px;
+      background: #f6f3e8;
+      color: #746b50;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    body { min-height: 100vh; }
+    .paper { max-width: 800px; padding: 48px 0 56px; }
+    .paper h1 { margin: 16px 0 20px; line-height: 1.25; }
+    .authors { font-size: 1.05rem; line-height: 1.8; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 36px; }
+    .paper-links .resource-link { margin: 0; padding: 6px 16px; font-size: 0.93rem; }
+    .abstract h2 { color: var(--accent-dark); font-size: 1.5rem; margin: 0 0 20px; }
+    .abstract h2::after {
+      display: block; width: 46px; height: 5px; margin-top: 10px;
+      background: linear-gradient(90deg, #acd9f2 0 38%, #f1c5d5 38% 70%, #ffd86b 70%);
+      border-radius: 999px; content: "";
+    }
+    .abstract p { color: #4f5c6c; font-size: 1.1rem; line-height: 1.8; }
+    .back-link { display: inline-block; margin-top: 24px; }
+    @media (max-width: 600px) {
+      .paper { padding-top: 28px; }
+      .topbar-inner { flex-wrap: wrap; gap: 8px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <div class="site-shell topbar-inner">
+      <a class="wordmark" href="/">Joy Qiuyue Zhong</a>
+      <a href="/#publications">Publications</a>
+    </div>
+  </header>
+  <main id="main-content" class="site-shell paper">
+    <article>
+      <span class="venue-badge">arXiv preprint, 2026</span>
+      <h1>Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h1>
+      <p class="authors"><strong>Joy Qiuyue Zhong</strong>, Jeongah Lee, Drishti Goel, Violeta J. Rodríguez, Dong Whi Yoo, Koustuv Saha, Ravi Karkar</p>
+      <p class="meta">Published: <time datetime="2026-09-18">2026-09-18</time></p>
+      <div class="paper-links">
+        <a class="resource-link" href="/publications/beyond-counting-blessings.pdf">PDF</a>
+        <a class="resource-link" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">arXiv</a>
+      </div>
+      <section class="abstract" aria-labelledby="abstract-heading">
+        <h2 id="abstract-heading">Abstract</h2>
+        <p>Gratitude technologies support well-being by prompting reflection on what people appreciate. But gratitude does not serve the same purpose in every circumstance: as life situations change, so does what people seek from it, and whether it feels appropriate at all. To understand how technology can adapt to and support such shifts, we conducted retrospective, artifact-elicitation interviews with 17 adults who had practiced gratitude for one to fifteen years. Participants’ appraisals of their situations shaped what they needed, yielding six recurring practice patterns, including a boundary where gratitude felt forced. We contribute the Adaptive Gratitude Practice Model, which explains how appraisals shifted even within the same life situation, how participants adapted activities, modalities, and rhythms, lapsed under competing demands or emotional unreadiness, and resumed when gratitude again felt useful. Additionally, we derive design implications for situated support, self-understanding through past records, and relational care with changing life situations.</p>
+      </section>
+      <a class="back-link" href="/">&larr; Back to homepage</a>
+    </article>
+  </main>
+</body>
+</html>
