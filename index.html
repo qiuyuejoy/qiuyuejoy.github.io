@@ -888,17 +888,42 @@
       text-align: center;
     }
 
-    .life-intro {
-      max-width: 680px;
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-family: inherit;
-      font-size: 1rem;
-      line-height: 1.55;
+    .life-quote {
+      margin: 0 0 28px;
+      padding: clamp(20px, 3vw, 32px);
+      border-left: 3px solid #a8cbdc;
+      border-radius: 0 16px 16px 0;
+      background: linear-gradient(120deg, #edf6fb, #fff4f6);
     }
 
-    .life-intro + .life-gallery {
-      margin-top: 24px;
+    .life-quote blockquote {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .life-quote figcaption {
+      margin-top: 14px;
+      color: #596575;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .life-stories {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .life-intro {
+      margin: 0;
+      color: #596575;
+      font-size: 1rem;
+      line-height: 1.8;
     }
 
     #life {
@@ -1274,11 +1299,22 @@
 
     <section id="life">
       <div class="section-heading">
-        <h2>Life Experience Officer</h2>
+        <h2>Curiosity &amp; Exploration</h2>
         <div>
-          <p class="life-intro">Beyond research, curiosity takes me to unfamiliar places and brings me into conversation with people whose lives differ from my own. During my gap year, I traveled solo across countries, sharing stories, laughter, and adventures with people from different cultures and backgrounds.</p>
-          <p class="life-intro">Whether climbing, surfing, diving, skiing, or exploring caves, I enjoy learning new skills, working through challenges, and discovering what I’m capable of. These experiences have strengthened my independence, adaptability, and openness to other perspectives—qualities I bring to research and collaboration.
-</p>
+          <figure class="life-quote">
+            <blockquote>
+              “Life is not what one lived, but what one remembers and how one remembers it in order to recount it.”
+            </blockquote>
+            <figcaption>— Gabriel García Márquez, <cite>Living to Tell the Tale</cite></figcaption>
+          </figure>
+          <div class="life-stories">
+            <div class="life-story">
+              <p class="life-intro">During my gap year, I traveled solo across countries, sharing stories, laughter, and adventures with people from different backgrounds. These encounters deepened my curiosity about people and the world—especially how people remember and make sense of their experiences, and how the stories they tell shape their future choices. That curiosity continues to guide my HCI research.</p>
+            </div>
+            <div class="life-story">
+              <p class="life-intro">I also enjoy climbing, surfing, diving, skiing, and exploring caves. These activities teach me to stay curious when I’m unsure, learn from others, and adapt when my first approach doesn’t work. I bring the same patience and openness to research, working through difficult problems and revising my ideas as I learn.</p>
+            </div>
+          </div>
           <div class="life-gallery">
             <div class="life-gallery-column">
               <figure class="life-photo">
