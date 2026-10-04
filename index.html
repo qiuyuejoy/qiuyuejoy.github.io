@@ -501,11 +501,11 @@
     }
 
     .hero-about a {
-      color: #1e3a8a;
+      color: #315f82;
     }
 
     .hero-about a:hover {
-      color: #d98200;
+      color: #854966;
     }
 
     .hero-about strong {
@@ -989,6 +989,56 @@
       text-align: center;
     }
 
+    /* About: an editorial introduction and two connected research directions. */
+    .hero { margin-top: 42px; gap: 44px; }
+    .hero-content { min-width: 0; }
+    .hero .title-role { font-size: 1rem; font-weight: 600; }
+    .hero h1 { font-size: clamp(2rem, 3.2vw, 2.55rem); }
+    .hero-about { margin-top: 22px; font-size: 1rem; line-height: 1.75; }
+    .hero-about > p:first-child { font-size: 1.04rem; color: #3d5063; }
+    .hero-about a { text-decoration: underline; text-decoration-color: #c4d7e5; text-underline-offset: 3px; }
+    .hero-visual { gap: 18px; padding-top: 5px; }
+    .hero .portrait { border-radius: 100px 100px 20px 20px; border-width: 5px; box-shadow: 0 12px 32px #365c7818; }
+    .hero .research-interest-group { border-top: 1px solid #dce7ed; padding-top: 20px; }
+    .hero .research-interests { gap: 10px; }
+    .hero .research-interests span { font-size: 0.82rem; white-space: normal; border-radius: 6px; }
+    .research-overview {
+      margin: 26px 0 18px;
+      padding: 20px 24px;
+      border-left: 3px solid #e7ce79;
+      border-radius: 0 14px 14px 0;
+      background: #fff9df;
+    }
+    .hero-about .research-overview p { margin: 0; }
+    .hero-about .research-overview strong { color: #73551f; }
+    .hero-about .research-direction strong { color: #854966; }
+    .hero-about .research-direction:nth-child(2) strong { color: #315f82; }
+    .research-directions { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .research-direction {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 24px;
+      border-left: 3px solid #d9a4ba;
+      border-radius: 0 14px 14px 0;
+      background: #fcf1f5;
+    }
+    .research-direction:nth-child(2) { border-left-color: #91b9cb; background: #f1f8fc; }
+    .hero-about .research-direction p { font-size: 0.93rem; line-height: 1.75; margin: 0; }
+    @media (max-width: 850px) and (min-width: 621px) {
+      .hero-visual { grid-template-columns: 200px 1fr; column-gap: 28px; }
+      .hero .portrait { grid-row: span 2; }
+      .hero .contact-links { justify-self: start; align-self: end; }
+      .hero .research-interest-group { margin-top: 0; align-self: start; }
+    }
+    @media (max-width: 620px) {
+      .research-directions { grid-template-columns: 1fr; }
+      .hero .research-interest-group { text-align: center; }
+      .hero .research-interests { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; }
+      .hero .portrait { justify-self: center; }
+      .research-overview,
+      .research-direction { padding: 18px; }
+    }
+
     @media (max-width: 850px) {
       .topbar-inner {
         align-items: flex-start;
@@ -1155,7 +1205,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="hero-content">
         <h1>Joy Qiuyue Zhong</h1>
         <p class="title">
           <span class="title-role">Computer Science Ph.D. Student in HCI @ UMass Amherst</span>
@@ -1167,12 +1217,18 @@
           <p>
             It’s so exciting and freeing to explore research questions through both <strong>humanistic and technical lenses</strong>! I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. Together with my earlier experience in business and entrepreneurship, this training shapes how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
           </p>
-          <p>
-            This generalist mindset guides my research on how technology can support <strong>individual and collective well-being</strong>. Across related projects, I draw on psychology, sociology, and philosophy to understand people’s needs, values, and experiences, and examine how technology can support meaningful social interaction and human–AI collaboration. These interests extend to <strong>societal AI</strong>, where I seek to translate legal and ethical insights into frameworks for AI design, evaluation, and governance.
-          </p>
-          <p class="research-goal">
-            My goal is to help shape technology that responds to individual needs and respects human autonomy while accounting for diverse social values and the principles and purposes underlying law.
-          </p>
+          <div class="research-overview">
+            <p>This generalist mindset guides my research in <strong>human-centered AI</strong>. Drawing on psychology, sociology, and philosophy, I  ground the design and evaluation of AI and interactive technologies in people’s needs, values, and lived experiences.</p>
+          </div>
+          <div class="research-directions" aria-label="Research directions">
+            <article class="research-direction">
+              <p>Work in <strong>positive and social computing</strong> explores how AI and interactive technologies can support <strong>human flourishing</strong>, including individual and collective well-being. Studies of everyday well-being practices and technology-mediated social interactions inform the design of systems that respond to changing needs, support agency, and enable meaningful social connection.</p>
+            </article>
+            <article class="research-direction">
+              <p>Research on <strong>AI alignment</strong> examines how personal values, societal priorities, and the principles underlying law can guide AI design and evaluation. This work explores tensions among stakeholder perspectives and aims to translate empirical findings and ethical and legal insights into guidance for AI development, deployment, and governance.</p>
+            </article>
+          </div>
+
         </div>
       </div>
     </div>
