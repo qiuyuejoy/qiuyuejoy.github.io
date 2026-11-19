@@ -584,6 +584,15 @@
       align-items: start;
     }
 
+    #publications .section-heading {
+      display: block;
+    }
+
+    #publications .section-heading > h2 {
+      position: static;
+      margin-bottom: 18px;
+    }
+
     h2 {
       position: sticky;
       top: calc(var(--nav-height, 70px) + 20px);
@@ -645,6 +654,35 @@
     #publications .card {
       background: transparent;
       border-left: 0;
+    }
+
+    #publications .publication-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+      align-items: center;
+      gap: 24px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+
+    .publication-teaser {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .publication-teaser img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .publication-teaser--padded {
+      padding: 18px 40px;
     }
 
     #experience h2::after {
@@ -1079,6 +1117,12 @@
         width: min(100% - 28px, 1000px);
       }
 
+      #publications .publication-feature {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 12px;
+      }
+
       .topbar {
         padding-bottom: 10px;
       }
@@ -1223,6 +1267,7 @@
           <div class="research-directions" aria-label="Research directions">
             <article class="research-direction">
               <p>Work in <strong>positive and social computing</strong> explores how technologies can support <strong>human flourishing</strong>, strengthening well-being, agency, and meaningful connection in everyday life.</p>
+            </article>
             <article class="research-direction">
               <p>Research on <strong>AI alignment</strong> examines how personal values, organizational norms, and legal principles can guide the design, evaluation, and governance of AI systems.</p>
             </article>
@@ -1238,31 +1283,57 @@
       <div class="section-heading">
         <h2>Publications</h2>
         <div class="card-list">
-          <article class="card">
-            <h3>Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h3>
-            <p class="meta"><span class="venue-badge">arXiv preprint, 2026</span><span class="publication-authors"><strong>Joy Qiuyue Zhong</strong>, Jeongah Lee, Drishti Goel, Violeta J. Rodríguez, Dong Whi Yoo, Koustuv Saha, Ravi Karkar</span></p>
-            <p>
-              <a class="resource-link" href="/publications/beyond-counting-blessings.html">Details</a>
-              <a class="resource-link" href="/publications/beyond-counting-blessings.pdf">PDF</a>
-              <a class="resource-link" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">arXiv</a>
-            </p>
+          <article class="card publication-feature">
+            <figure class="publication-teaser">
+              <img src="/publications/teasers/beyond-counting-blessings-figure-1.png" alt="Adaptive Gratitude Practice Model: life situations shape appraisals and psychological needs, which inform practice patterns and implementation, with paths for adaptation, maintenance, lapse, and resumption.">
+            </figure>
+            <div class="publication-content">
+              <h3>Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h3>
+              <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">CHI 2027 under review</a><span class="publication-authors"><strong>Joy Qiuyue Zhong</strong>, Jeongah Lee, Drishti Goel, Violeta J. Rodríguez, Dong Whi Yoo, Koustuv Saha, Ravi Karkar</span></p>
+              <p>
+                <a class="resource-link" href="/publications/beyond-counting-blessings.pdf">PDF</a>
+              </p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Can LLMs identify and repair ruptures? Comparison between clinician practices and LLM behaviors</h3>
-            <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">CHI 2027 under review</a><span class="publication-authors">Lee, J., <strong>Zhong, Q.,</strong> Goel, D., Rodriguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R.</span></p>
-
+          <article class="card publication-feature">
+            <figure class="publication-teaser">
+              <img src="/publications/teasers/ruptures-figure-1.png" alt="Example rupture scenarios and clinical resolution strategies used to evaluate LLM responses.">
+            </figure>
+            <div class="publication-content">
+              <h3>Can LLMs identify and repair ruptures? Comparison between clinician practices and LLM behaviors</h3>
+              <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">CHI 2027 under review</a><span class="publication-authors">Lee, J., <strong>Zhong, Q.,</strong> Goel, D., Rodriguez, V. J., Yoo, D. W., Saha, K., &amp; Karkar, R.</span></p>
+              <p><a class="resource-link" href="/publications/ruptures.pdf">PDF</a></p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
-            <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">EMNLP 2026</a><span class="publication-authors">D., Goyal, A., Duddu, V., Pal, O., Lee, J., <strong>Zhong, Q. J.,</strong> ... &amp; Saha, K.</span></p>
+          <article class="card publication-feature">
+            <figure class="publication-teaser publication-teaser--padded">
+              <img src="/publications/teasers/caregiving-roles-combined.png" alt="Two key takeaways: support role assignment shapes interactional risks and model language; perceived response quality does not uniformly align with clinician-informed safety.">
+            </figure>
+            <div class="publication-content">
+              <h3>Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
+              <p class="meta"><a class="venue-badge" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">EMNLP 2026</a><span class="publication-authors">D., Goyal, A., Duddu, V., Pal, O., Lee, J., <strong>Zhong, Q. J.,</strong> ... &amp; Saha, K.</span></p>
+              <p><a class="resource-link" href="/publications/Inform,%20Coach,%20Relate,%20Listen-%20Auditing%20LLM%20Caregiving%20Support%20Roles.pdf">PDF</a></p>
+            </div>
           </article>
-          <article class="card">
-            <h3>RubRIX: Rubric-driven Risk Mitigation in Caregiver-AI Interactions</h3>
-            <p class="meta"><a class="venue-badge" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">ACL 2026</a><span class="publication-authors">Goel, D., Lee, J., <strong>Zhong, Q.</strong>, Rodriguez, V. J., Brown, D. S., Karkar, R., ... &amp; Saha, K.</span></p>
+          <article class="card publication-feature">
+            <figure class="publication-teaser publication-teaser--padded">
+              <img src="/publications/teasers/rubrix-figure-1.png" alt="Schematic overview of the RubRIX study design and rubric-driven risk mitigation process.">
+            </figure>
+            <div class="publication-content">
+              <h3>RubRIX: Rubric-driven Risk Mitigation in Caregiver-AI Interactions</h3>
+              <p class="meta"><a class="venue-badge" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">ACL 2026</a><span class="publication-authors">Goel, D., Lee, J., <strong>Zhong, Q.</strong>, Rodriguez, V. J., Brown, D. S., Karkar, R., ... &amp; Saha, K.</span></p>
+              <p><a class="resource-link" href="/publications/RubRIX.pdf">PDF</a></p>
+            </div>
           </article>
-          <article class="card">
-            <h3>AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
-            <p class="meta"><a class="venue-badge" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">CHI 2025</a><span class="publication-authors">Das Swain, V., <strong>Zhong, Q. J.,</strong> Parekh, J. R., Jeon, Y., Zimmermann, R., Czerwinski, M. P., ... &amp; Hernandez, J.</span></p>
+          <article class="card publication-feature">
+            <figure class="publication-teaser">
+              <img src="/publications/teasers/ai-on-my-shoulder-figure-1.png" alt="Schematic figures showing how a domain-informed empathetic coworker supports emotional labor for front-office workers.">
+            </figure>
+            <div class="publication-content">
+              <h3>AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
+              <p class="meta"><a class="venue-badge" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">CHI 2025</a><span class="publication-authors">Das Swain, V., <strong>Zhong, Q. J.,</strong> Parekh, J. R., Jeon, Y., Zimmermann, R., Czerwinski, M. P., ... &amp; Hernandez, J.</span></p>
+              <p><a class="resource-link" href="/publications/ai%20on%20my%20shoulder.pdf">PDF</a></p>
+            </div>
           </article>
         </div>
       </div>
