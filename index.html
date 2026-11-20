@@ -661,15 +661,19 @@
       grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
       align-items: center;
       gap: 24px;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--paper);
+      padding: 14px 0;
+    }
+
+    #publications .publication-feature:hover {
+      background: transparent;
+      transform: none;
     }
 
     .publication-teaser {
       margin: 0;
       overflow: hidden;
+      aspect-ratio: 2 / 1;
+      padding: 10px;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: #fff;
@@ -678,12 +682,10 @@
     .publication-teaser img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
     }
 
-    .publication-teaser--padded {
-      padding: 18px 40px;
-    }
 
     #experience h2::after {
       background: linear-gradient(90deg, #acd9f2 0 58%, #f1c5d5 58%);
@@ -765,8 +767,8 @@
     }
 
     .publication-authors strong {
-      color: #596575;
-      font-weight: 600;
+      color: #c46a10;
+      font-weight: 700;
     }
 
     .resource-link {
@@ -1042,44 +1044,13 @@
     .hero-about a { text-decoration: underline; text-decoration-color: #c4d7e5; text-underline-offset: 3px; }
     .hero-visual { gap: 18px; padding-top: 5px; }
     .hero .portrait { border-radius: 100px 100px 20px 20px; border-width: 5px; box-shadow: 0 12px 32px #365c7818; }
-    .hero .research-interest-group { border-top: 1px solid #dce7ed; padding-top: 20px; }
-    .hero .research-interests { gap: 10px; }
-    .hero .research-interests span { font-size: 0.82rem; white-space: normal; border-radius: 6px; }
-    .research-overview {
-      margin: 26px 0 18px;
-      padding: 20px 24px;
-      border-left: 3px solid #e7ce79;
-      border-radius: 0 14px 14px 0;
-      background: #fff9df;
-    }
-    .hero-about .research-overview p { margin: 0; }
-    .hero-about .research-overview strong { color: #73551f; }
-    .hero-about .research-direction strong { color: #854966; }
-    .hero-about .research-direction:nth-child(2) strong { color: #315f82; }
-    .research-directions { display: grid; grid-template-columns: 1fr; gap: 18px; }
-    .research-direction {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 24px;
-      border-left: 3px solid #d9a4ba;
-      border-radius: 0 14px 14px 0;
-      background: #fcf1f5;
-    }
-    .research-direction:nth-child(2) { border-left-color: #91b9cb; background: #f1f8fc; }
-    .hero-about .research-direction p { font-size: 0.93rem; line-height: 1.75; margin: 0; }
+    .hero-about .about-keyword { color: #854966; font-weight: 700; }
     @media (max-width: 850px) and (min-width: 621px) {
       .hero-visual { grid-template-columns: 200px 1fr; column-gap: 28px; }
-      .hero .portrait { grid-row: span 2; }
       .hero .contact-links { justify-self: start; align-self: end; }
-      .hero .research-interest-group { margin-top: 0; align-self: start; }
     }
     @media (max-width: 620px) {
-      .research-directions { grid-template-columns: 1fr; }
-      .hero .research-interest-group { text-align: center; }
-      .hero .research-interests { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; }
       .hero .portrait { justify-self: center; }
-      .research-overview,
-      .research-direction { padding: 18px; }
     }
 
     @media (max-width: 850px) {
@@ -1125,7 +1096,7 @@
       #publications .publication-feature {
         grid-template-columns: 1fr;
         gap: 14px;
-        padding: 12px;
+        padding: 12px 0;
       }
 
       .topbar {
@@ -1194,8 +1165,8 @@
       <span class="section-dock-label">About</span>
       <span class="section-dock-dot" aria-hidden="true"></span>
     </a>
-    <a href="#publications" aria-label="Jump to Publications">
-      <span class="section-dock-label">Publications</span>
+    <a href="#publications" aria-label="Jump to Research">
+      <span class="section-dock-label">Research</span>
       <span class="section-dock-dot" aria-hidden="true"></span>
     </a>
     <a href="#experience" aria-label="Jump to Experience">
@@ -1212,7 +1183,7 @@
         <a class="wordmark" href="/" aria-label="Joy Qiuyue Zhong home">Joy Qiuyue Zhong</a>
         <nav aria-label="Main navigation">
           <a href="#about" aria-current="location">About</a>
-          <a href="#publications">Publications</a>
+          <a href="#publications">Research</a>
           <a href="#experience">Experience</a>
           <a href="#life">Life</a>
         </nav>
@@ -1245,14 +1216,6 @@
             </span>
           </a>
         </div>
-        <div class="research-interest-group">
-          <h2 class="research-interest-title">Research interests</h2>
-          <div class="research-interests">
-            <span>Human-Centered AI</span>
-            <span>Positive &amp; Social Computing</span>
-            <span>AI Alignment &amp; Governance</span>
-          </div>
-        </div>
       </div>
       <div class="hero-content">
         <h1>Joy Qiuyue Zhong</h1>
@@ -1261,23 +1224,17 @@
         </p>
         <div class="hero-about">
           <p>
-            Hello, and welcome to my work and world! I’m <strong>Joy Qiuyue Zhong</strong>, a Computer Science Ph.D. student in Human-Computer Interaction at the University of Massachusetts Amherst, advised by <strong><a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Professor Ravi Karkar</a></strong>.
+            Hello, and welcome to my work and world! I am a Ph.D. student in Computer Science at the University of Massachusetts Amherst, where I study human–AI interaction with <strong><a href="https://people.cs.umass.edu/~rkarkar/" target="_blank" rel="noopener noreferrer">Professor Ravi Karkar</a></strong>.
           </p>
           <p>
-            It’s so exciting and freeing to explore research questions through both <strong>humanistic and technical lenses</strong>! I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. Together with my earlier experience in business and entrepreneurship, this training shapes how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
+            I envision technology that serves both the individual and society: strengthening each person’s <strong class="about-keyword">agency</strong> and sense of <strong class="about-keyword">meaning</strong>, while aligned with shared values. To pursue this vision, I explore how to design <strong class="about-keyword">trustworthy</strong> technology that <strong class="about-keyword">adapts</strong> to people’s changing needs.
           </p>
-          <div class="research-overview">
-            <p>This generalist mindset guides my research in <strong>human-centered AI</strong>. Designing and evaluating AI and interactive technologies around people’s needs, values, and lived experiences.</p>
-          </div>
-          <div class="research-directions" aria-label="Research directions">
-            <article class="research-direction">
-              <p>Work in <strong>positive and social computing</strong> explores how technologies can support <strong>human flourishing</strong>, strengthening well-being, agency, and meaningful connection in everyday life.</p>
-            </article>
-            <article class="research-direction">
-              <p>Research on <strong>AI alignment</strong> examines how personal values, organizational norms, and legal principles can guide the design, evaluation, and governance of AI systems.</p>
-            </article>
-          </div>
-
+          <p>
+            Across projects, my work spans the full research cycle. I build theory through formative studies, translate these insights into interactive systems, and use mixed methods to evaluate both model behavior and people’s experiences with AI.
+          </p>
+          <p>
+            Before my Ph.D., I practiced law and co-founded a startup. I hold an <a href="https://siliconvalley.northeastern.edu/academic_program/master-of-science-in-information-systems-is-bridge/" target="_blank" rel="noopener noreferrer">M.S. in Information Systems</a> from <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">Northeastern University</a> and a <a href="https://www.lsac.org/discover-law/types-law-programs/llm-degree-programs" target="_blank" rel="noopener noreferrer">Master of Laws (LL.M.)</a> from <a href="https://www.usnews.com/best-graduate-schools/top-law-schools/washington-university-in-st-louis-03092" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a>. These experiences shape how I think about people’s needs, organizational practices, and the legal and ethical dimensions of technology.
+          </p>
         </div>
       </div>
     </div>
@@ -1286,15 +1243,15 @@
   <main id="main-content" class="site-shell">
     <section id="publications">
       <div class="section-heading">
-        <h2>Publications</h2>
+        <h2>Research</h2>
         <div class="card-list">
           <article class="card publication-feature">
             <figure class="publication-teaser">
               <img src="/publications/teasers/beyond-counting-blessings-figure-1.png" alt="Adaptive Gratitude Practice Model: life situations shape appraisals and psychological needs, which inform practice patterns and implementation, with paths for adaptation, maintenance, lapse, and resumption.">
             </figure>
             <div class="publication-content">
-              <h3><span class="pub-venue">[CHI 2027]</span> Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h3>
-              <p class="meta"><span class="publication-authors"><strong>Zhong JQ</strong>, Lee J, Goel D, Rodriguez VJ, Yoo DW, Saha K, Karkar R. <a class="venue-badge" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">arXiv Under Review</a></span></p>
+              <h3><span class="pub-venue">[CHI 2027 Under Review]</span> Beyond Counting Blessings: Tracing the Evolution of Gratitude Practices and Technology Needs</h3>
+              <p class="meta"><span class="publication-authors"><strong>Zhong JQ</strong>, Lee J, Goel D, Rodriguez VJ, Yoo DW, Saha K, Karkar R. <a class="venue-badge" href="https://arxiv.org/abs/2609.21853" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
               <p>
                 <a class="resource-link" href="/publications/beyond-counting-blessings.pdf">PDF</a>
               </p>
@@ -1302,31 +1259,31 @@
           </article>
           <article class="card publication-feature">
             <figure class="publication-teaser">
-              <img src="/publications/teasers/ruptures-figure-1.png" alt="Example rupture scenarios and clinical resolution strategies used to evaluate LLM responses.">
+              <img src="/publications/teasers/ruptures-figure-1.png?v=2" alt="Study procedure: 22 mental health experts complete onboarding, then for each of 7 scenarios identify rupture types, discuss resolution strategies, and evaluate LLM resolution strategies, followed by demographics and a post survey.">
             </figure>
             <div class="publication-content">
-              <h3><span class="pub-venue">[CHI 2027]</span> Can LLMs identify &amp; repair ruptures? Comparison between clinician practices and LLM behaviors</h3>
-              <p class="meta"><span class="publication-authors">Lee J, <strong>Zhong JQ</strong>, Goel D, Rodriguez VJ, Yoo DW, Saha K, Karkar R. <a class="venue-badge" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">arXiv Under Review</a></span></p>
+              <h3><span class="pub-venue">[CHI 2027 Under Review]</span> Can LLMs identify &amp; repair ruptures? Comparison between clinician practices and LLM behaviors</h3>
+              <p class="meta"><span class="publication-authors">Lee J, <strong>Zhong JQ</strong>, Goel D, Rodriguez VJ, Yoo DW, Saha K, Karkar R. <a class="venue-badge" href="https://arxiv.org/abs/2609.25287" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
               <p><a class="resource-link" href="/publications/ruptures.pdf">PDF</a></p>
             </div>
           </article>
           <article class="card publication-feature">
-            <figure class="publication-teaser publication-teaser--padded">
-              <img src="/publications/teasers/caregiving-roles-combined.png" alt="Two key takeaways: support role assignment shapes interactional risks and model language; perceived response quality does not uniformly align with clinician-informed safety.">
+            <figure class="publication-teaser">
+              <img src="/publications/teasers/caregiving-roles-figure-1.png?v=2" alt="Heatmaps of paired Cohen's d versus baseline for GPT-4o-mini, Llama, and MedGemma, showing how Inform, Coach, Relate, and Listen roles shift affect, social, cognitive, agency, perception, and pronoun language.">
             </figure>
             <div class="publication-content">
-              <h3><span class="pub-venue">[EMNLP 2026]</span> Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
-              <p class="meta"><span class="publication-authors">Goel D, Goyal A, Duddu V, Pal O, Lee J, <strong>Zhong QJ</strong>, Rodriguez VJ, Brown DS, Yoo DW, Karkar R, Saha K. <a class="venue-badge" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">arXiv Accepted</a></span></p>
+              <h3><span class="pub-venue">[EMNLP 2026 Accepted]</span> Inform, Coach, Relate, Listen: Auditing LLM Caregiving Support Roles</h3>
+              <p class="meta"><span class="publication-authors">Goel D, Goyal A, Duddu V, Pal O, Lee J, <strong>Zhong QJ</strong>, Rodriguez VJ, Brown DS, Yoo DW, Karkar R, Saha K. <a class="venue-badge" href="https://arxiv.org/abs/2605.29473" target="_blank" rel="noopener noreferrer">arXiv</a></span></p>
               <p><a class="resource-link" href="/publications/Inform,%20Coach,%20Relate,%20Listen-%20Auditing%20LLM%20Caregiving%20Support%20Roles.pdf">PDF</a></p>
             </div>
           </article>
           <article class="card publication-feature">
-            <figure class="publication-teaser publication-teaser--padded">
+            <figure class="publication-teaser">
               <img src="/publications/teasers/rubrix-figure-1.png" alt="Schematic overview of the RubRIX study design and rubric-driven risk mitigation process.">
             </figure>
             <div class="publication-content">
-              <h3><span class="pub-venue">[ACL 2026]</span> RubRIX: Rubric-driven risk mitigation in caregiver-ai interactions</h3>
-              <p class="meta"><span class="publication-authors">Goel D, Lee J, <strong>Zhong Q</strong>, Rodriguez VJ, Brown DS, Karkar R, Yoo DW, Saha K. <a class="venue-badge" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">ACL Anthology Accepted</a></span></p>
+              <h3><span class="pub-venue">[ACL 2026 Accepted]</span> RubRIX: Rubric-driven risk mitigation in caregiver-ai interactions</h3>
+              <p class="meta"><span class="publication-authors">Goel D, Lee J, <strong>Zhong Q</strong>, Rodriguez VJ, Brown DS, Karkar R, Yoo DW, Saha K. <a class="venue-badge" href="https://aclanthology.org/2026.findings-acl.1774/" target="_blank" rel="noopener noreferrer">ACL Anthology</a></span></p>
               <p><a class="resource-link" href="/publications/RubRIX.pdf">PDF</a></p>
             </div>
           </article>
@@ -1335,8 +1292,8 @@
               <img src="/publications/teasers/ai-on-my-shoulder-figure-1.png" alt="Schematic figures showing how a domain-informed empathetic coworker supports emotional labor for front-office workers.">
             </figure>
             <div class="publication-content">
-              <h3><span class="pub-venue">[CHI 2025]</span> AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
-              <p class="meta"><span class="publication-authors">Das Swain V, <strong>Zhong QJ</strong>, Parekh JR, Jeon Y, Zimmermann R, Czerwinski MP, Suh J, Mishra V, Saha K, Hernandez J. <a class="venue-badge" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">ACM DL Accepted</a></span></p>
+              <h3><span class="pub-venue">[CHI 2025 Accepted]</span> AI on My Shoulder: Supporting Emotional Labor in Front-Office Roles with an LLM-based Empathetic Coworker</h3>
+              <p class="meta"><span class="publication-authors">Das Swain V, <strong>Zhong QJ</strong>, Parekh JR, Jeon Y, Zimmermann R, Czerwinski MP, Suh J, Mishra V, Saha K, Hernandez J. <a class="venue-badge" href="https://dl.acm.org/doi/10.1145/3706598.3713705" target="_blank" rel="noopener noreferrer">ACM DL</a></span></p>
               <p><a class="resource-link" href="/publications/ai%20on%20my%20shoulder.pdf">PDF</a></p>
             </div>
           </article>
@@ -1440,10 +1397,10 @@
           </figure>
           <div class="life-stories">
             <div class="life-story">
-              <p class="life-intro">During my gap year, I traveled solo across countries, sharing stories, laughter, and adventures with people from different backgrounds. These encounters deepened my curiosity about people and the world—especially how people remember and make sense of their experiences, and how the stories they tell shape their future choices. That curiosity continues to guide my HCI research.</p>
+              <p class="life-intro">During a gap year of solo travel, I learned to connect with strangers quickly, listen closely, and see the world from perspectives very different from my own. These skills shape my research, from observing real-world phenomena and designing studies to interviewing people and building adaptive, personalized technology.</p>
             </div>
             <div class="life-story">
-              <p class="life-intro">I also enjoy climbing, surfing, diving, skiing, and exploring caves. These activities teach me to stay curious when I’m unsure, learn from others, and adapt when my first approach doesn’t work. I bring the same patience and openness to research, working through difficult problems and revising my ideas as I learn.</p>
+              <p class="life-intro">Climbing, surfing, diving, skiing, and exploring caves have helped me stay curious, open-minded, and adventurous while building my resilience. I bring the same spirit to research: I welcome unexpected findings, stick with difficult problems, and know when to step back and change direction. I’m always looking for the next unexplored place, in the world and in research.</p>
             </div>
           </div>
           <div class="life-gallery">
